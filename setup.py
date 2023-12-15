@@ -286,6 +286,32 @@ else:
 
 ext_modules.append(vllm_extension)
 
+BUILD_XPU_OPS = os.getenv('VLLM_BUILD_XPU_OPS', "0") == "1"
+
+xpu_ext_module = []
+XPU_OPS_SOURCES = []
+XPU_CXX_FLAGS = []
+XPU_LD_FLAGS = []
+if BUILD_XPU_OPS:
+    XPU_CXX_FLAGS += ["-DVLLM_BUILD_XPU_OPS", "-fsycl", "-fsycl-targets=spir64"]
+    XPU_LD_FLAGS += [f"-D_GLIBCXX_USE_CXX11_ABI={ABI}"] + ["-fsycl", "-fsycl-targets=spir64"] + ["-lsycl"]
+    XPU_OPS_SOURCES += [
+        "csrc/xpu/activation_xpu.cpp",
+        "csrc/xpu/attention_xpu.cpp",
+        "csrc/xpu/cache_ops_xpu.cpp",
+        "csrc/xpu/layernorm_xpu.cpp",
+        "csrc/xpu/pos_encoding_xpu.cpp",
+        "csrc/pybind.cpp",
+    ]
+    xpu_extension = DPCPPExtension(
+        name="vllm_xpu._C",
+        sources=XPU_OPS_SOURCES,
+        extra_compile_args={
+            "cxx": XPU_CXX_FLAGS,
+        },
+        extra_link_args=XPU_LD_FLAGS,
+    )
+    xpu_ext_module.append(xpu_extension)
 
 def get_path(*filepath) -> str:
     return os.path.join(ROOT_DIR, *filepath)
@@ -345,34 +371,64 @@ def get_requirements() -> List[str]:
 
     return requirements
 
-
-setuptools.setup(
-    name="vllm",
-    version=get_vllm_version(),
-    author="vLLM Team",
-    license="Apache 2.0",
-    description=("A high-throughput and memory-efficient inference and "
-                 "serving engine for LLMs"),
-    long_description=read_readme(),
-    long_description_content_type="text/markdown",
-    url="https://github.com/vllm-project/vllm",
-    project_urls={
-        "Homepage": "https://github.com/vllm-project/vllm",
-        "Documentation": "https://vllm.readthedocs.io/en/latest/",
-    },
-    classifiers=[
-        "Programming Language :: Python :: 3.8",
-        "Programming Language :: Python :: 3.9",
-        "Programming Language :: Python :: 3.10",
-        "Programming Language :: Python :: 3.11",
-        "License :: OSI Approved :: Apache Software License",
-        "Topic :: Scientific/Engineering :: Artificial Intelligence",
-    ],
-    packages=setuptools.find_packages(exclude=("benchmarks", "csrc", "docs",
-                                               "examples", "tests")),
-    python_requires=">=3.8",
-    install_requires=get_requirements(),
-    ext_modules=ext_modules,
-    cmdclass={"build_ext": BuildExtension},
-    package_data={"vllm": ["py.typed"]},
-)
+if BUILD_XPU_OPS:
+    setuptools.setup(
+        name="vllm",
+        version=find_version(get_path("vllm", "__init__.py")),
+        author="vLLM Team",
+        license="Apache 2.0",
+        description=("A high-throughput and memory-efficient inference and "
+                     "serving engine for LLMs"),
+        long_description=read_readme(),
+        long_description_content_type="text/markdown",
+        url="https://github.com/vllm-project/vllm",
+        project_urls={
+            "Homepage": "https://github.com/vllm-project/vllm",
+            "Documentation": "https://vllm.readthedocs.io/en/latest/",
+        },
+        classifiers=[
+            "Programming Language :: Python :: 3.8",
+            "Programming Language :: Python :: 3.9",
+            "Programming Language :: Python :: 3.10",
+            "Programming Language :: Python :: 3.11",
+            "License :: OSI Approved :: Apache Software License",
+            "Topic :: Scientific/Engineering :: Artificial Intelligence",
+        ],
+        packages=setuptools.find_packages(exclude=("benchmarks", "csrc", "docs",
+                                                   "examples", "tests")),
+        python_requires=">=3.8",
+        install_requires=get_requirements(),
+        ext_modules=xpu_ext_module,
+        cmdclass={"build_ext": DpcppBuildExtension},
+    )
+else:
+    setuptools.setup(
+        name="vllm",
+        version=get_vllm_version(),
+        author="vLLM Team",
+        license="Apache 2.0",
+        description=("A high-throughput and memory-efficient inference and "
+                     "serving engine for LLMs"),
+        long_description=read_readme(),
+        long_description_content_type="text/markdown",
+        url="https://github.com/vllm-project/vllm",
+        project_urls={
+            "Homepage": "https://github.com/vllm-project/vllm",
+            "Documentation": "https://vllm.readthedocs.io/en/latest/",
+        },
+        classifiers=[
+            "Programming Language :: Python :: 3.8",
+            "Programming Language :: Python :: 3.9",
+            "Programming Language :: Python :: 3.10",
+            "Programming Language :: Python :: 3.11",
+            "License :: OSI Approved :: Apache Software License",
+            "Topic :: Scientific/Engineering :: Artificial Intelligence",
+        ],
+        packages=setuptools.find_packages(exclude=("benchmarks", "csrc", "docs",
+                                                   "examples", "tests")),
+        python_requires=">=3.8",
+        install_requires=get_requirements(),
+        ext_modules=ext_modules,
+        cmdclass={"build_ext": BuildExtension},
+        package_data={"vllm": ["py.typed"]},
+    )
