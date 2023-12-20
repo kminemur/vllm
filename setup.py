@@ -10,11 +10,13 @@ import setuptools
 import torch
 
 BUILD_CPU_ONLY = os.getenv('VLLM_BUILD_CPU_ONLY', "0") == "1"
-
-if not BUILD_CPU_ONLY:
-    from torch.utils.cpp_extension import BuildExtension, CUDAExtension, CUDA_HOME, ROCM_HOME
-else:
+BUILD_XPU_OPS = os.getenv('VLLM_BUILD_XPU_OPS', "0") == "1"
+if BUILD_XPU_OPS:
+    from xpu_extension.xpu_cpp_extension import DPCPPExtension, DpcppBuildExtension 
+elif BUILD_CPU_ONLY:
     from torch.utils.cpp_extension import BuildExtension, CppExtension
+else:
+    from torch.utils.cpp_extension import BuildExtension, CUDAExtension, CUDA_HOME, ROCM_HOME
 
 ROOT_DIR = os.path.dirname(__file__)
 
@@ -247,46 +249,43 @@ if BUILD_CPU_OPS:
     ]
 
 ext_modules = []
+if not BUILD_XPU_OPS:
+    if not BUILD_CPU_ONLY:
+        vllm_extension_sources = [
+            "csrc/cache_kernels.cu",
+            "csrc/attention/attention_kernels.cu",
+            "csrc/pos_encoding_kernels.cu",
+            "csrc/activation_kernels.cu",
+            "csrc/layernorm_kernels.cu",
+            "csrc/quantization/squeezellm/quant_cuda_kernel.cu",
+            "csrc/cuda_utils_kernels.cu",
+            "csrc/pybind.cpp",
+        ] + CPU_OPS_SOURCES
 
-if not BUILD_CPU_ONLY:
-    vllm_extension_sources = [
-        "csrc/cache_kernels.cu",
-        "csrc/attention/attention_kernels.cu",
-        "csrc/pos_encoding_kernels.cu",
-        "csrc/activation_kernels.cu",
-        "csrc/layernorm_kernels.cu",
-        "csrc/quantization/squeezellm/quant_cuda_kernel.cu",
-        "csrc/quantization/gptq/q_gemm.cu",
-        "csrc/cuda_utils_kernels.cu",
-        "csrc/pybind.cpp",
-    ] + CPU_OPS_SOURCES
+        if _is_cuda():
+            vllm_extension_sources.append("csrc/quantization/awq/gemm_kernels.cu")
 
-    if _is_cuda():
-        vllm_extension_sources.append("csrc/quantization/awq/gemm_kernels.cu")
+        vllm_extension = CUDAExtension(
+            name="vllm._C",
+            sources=vllm_extension_sources,
+            extra_compile_args={
+                "cxx": CXX_FLAGS,
+                "nvcc": NVCC_FLAGS,
+            },
+        )
+    else:
+        vllm_extension_sources = [
+            "csrc/pybind.cpp",
+        ] + CPU_OPS_SOURCES
+        vllm_extension = CppExtension(
+            name="vllm._C",
+            sources=vllm_extension_sources,
+            extra_compile_args={
+                "cxx": CXX_FLAGS,
+            },
+        )
 
-    vllm_extension = CUDAExtension(
-        name="vllm._C",
-        sources=vllm_extension_sources,
-        extra_compile_args={
-            "cxx": CXX_FLAGS,
-            "nvcc": NVCC_FLAGS,
-        },
-    )
-else:
-    vllm_extension_sources = [
-        "csrc/pybind.cpp",
-    ] + CPU_OPS_SOURCES
-    vllm_extension = CppExtension(
-        name="vllm._C",
-        sources=vllm_extension_sources,
-        extra_compile_args={
-            "cxx": CXX_FLAGS,
-        },
-    )
-
-ext_modules.append(vllm_extension)
-
-BUILD_XPU_OPS = os.getenv('VLLM_BUILD_XPU_OPS', "0") == "1"
+    ext_modules.append(vllm_extension)
 
 xpu_ext_module = []
 XPU_OPS_SOURCES = []
@@ -304,7 +303,7 @@ if BUILD_XPU_OPS:
         "csrc/pybind.cpp",
     ]
     xpu_extension = DPCPPExtension(
-        name="vllm_xpu._C",
+        name="vllm._C",
         sources=XPU_OPS_SOURCES,
         extra_compile_args={
             "cxx": XPU_CXX_FLAGS,

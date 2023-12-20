@@ -33,13 +33,15 @@
 #endif
 
 #ifdef VLLM_BUILD_XPU_OPS
+#undef VLLM_DISPATCH_TO_CPU_CASE
+#undef VLLM_DISPATCH_TO_CUDA_CASE
 #define VLLM_DISPATCH_TO_CPU_CASE(BASENAME, ...)                               \
   case c10::DeviceType::CPU: {                                                 \
     return BASENAME##_xpu(__VA_ARGS__);                                        \
   }
 #define VLLM_DISPATCH_TO_CUDA_CASE(BASENAME, ...)  
-#else
-#define VLLM_DISPATCH_TO_CPU_CASE(BASENAME, ...)
+// #else
+// #define VLLM_DISPATCH_TO_CPU_CASE(BASENAME, ...)
 #endif
 
 #define VLLM_DISPATCH_DEVICES(DEVICE, BASENAME, ...)                           \

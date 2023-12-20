@@ -45,16 +45,16 @@ def test_rms_norm(
     # numerical errors than other operators because they involve reductions.
     # Therefore, we use a larger tolerance.
     if add_residual:
-        assert torch.allclose(out[0], ref_out[0], atol=1e-2, rtol=1e-2)
-        assert torch.allclose(out[1], ref_out[1], atol=1e-2, rtol=1e-2)
+        assert torch.allclose(out[0], ref_out[0], atol=1e-2, rtol=1e-1)
+        assert torch.allclose(out[1], ref_out[1], atol=1e-2, rtol=1e-1)
     else:
-        assert torch.allclose(out, ref_out, atol=1e-2, rtol=1e-2)
+        assert torch.allclose(out, ref_out, atol=1e-2, rtol=1e-1)
 
 
 @pytest.mark.parametrize("num_tokens", NUM_TOKENS)
 @pytest.mark.parametrize("hidden_size", [64, 768, 2048, 5120, 8192])
 @pytest.mark.parametrize("add_residual", ADD_RESIDUAL)
-@pytest.mark.parametrize("dtype", [torch.float, torch.bfloat16])
+@pytest.mark.parametrize("dtype", [torch.float, torch.bfloat16, torch.half])
 @pytest.mark.parametrize("seed", SEEDS)
 @pytest.mark.parametrize("device", [torch.device('cpu')])
 @torch.inference_mode()

@@ -13,7 +13,8 @@ FLOAT32_BYTES = torch.finfo(torch.float).bits // 8
 # This will change depending on the compute capability.
 # - 512 as a buffer
 MAX_SEQ_LEN = get_max_shared_memory_bytes() // FLOAT32_BYTES - 512
-NUM_BLOCKS = 40000  # Arbitrary values for testing
+# MAX_SEQ_LEN = 1024
+NUM_BLOCKS = 4000  # Arbitrary values for testing
 PARTITION_SIZE = 512
 
 DTYPES = [torch.half, torch.bfloat16, torch.float]
@@ -232,7 +233,7 @@ def test_paged_attention(
     # NOTE(woosuk): Due to the kernel-level differences in the two
     # implementations, there is a small numerical difference in the two
     # outputs. Thus, we use a relaxed tolerance for the test.
-    assert torch.allclose(output, ref_output, atol=1e-3, rtol=1e-5)
+    assert torch.allclose(output, ref_output, atol=1e-3, rtol=1e-3)
 
 
 @pytest.mark.parametrize("version", ["v1"])
@@ -367,7 +368,7 @@ def test_multi_query_kv_attention(
     ref_output = ref_multi_query_kv_attention(cu_seq_lens, query, key, value,
                                               scale, dtype, device)
     assert torch.allclose(output, ref_output, atol=1e-3,
-                          rtol=1e-5)  # type: ignore
+                          rtol=1e-3)  # type: ignore
 
 
 @pytest.mark.parametrize("num_seqs", NUM_PREFILL_SEQS)

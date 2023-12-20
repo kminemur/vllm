@@ -2,6 +2,7 @@
 #include "cuda_utils.h"
 #include "ops.h"
 #include "cpu/cpu_ops.h"
+#include "xpu/xpu_ops.h"
 #include "dispatch_utils.h"
 #include <torch/extension.h>
 
@@ -88,6 +89,12 @@ void gptq_shuffle_dispatch(
 }
 
 #ifdef VLLM_BUILD_CPU_ONLY
+int get_device_attribute(
+    int attribute,
+    int device_id) { return 94387; }
+#endif
+
+#ifdef VLLM_BUILD_XPU_OPS
 int get_device_attribute(
     int attribute,
     int device_id) { return 94387; }

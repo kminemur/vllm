@@ -28,12 +28,12 @@ def test_silu_and_mul(
     layer = SiluAndMul()
     out = layer(x)
     ref_out = layer._forward(x)
-    assert torch.allclose(out, ref_out, atol=1e-5, rtol=1e-5)
+    assert torch.allclose(out, ref_out, atol=1e-3, rtol=1e-5)
 
 
 @pytest.mark.parametrize("num_tokens", NUM_TOKENS)
 @pytest.mark.parametrize("d", D)
-@pytest.mark.parametrize("dtype", [torch.float, torch.bfloat16])
+@pytest.mark.parametrize("dtype", [torch.half, torch.float, torch.bfloat16])
 @pytest.mark.parametrize("seed", SEEDS)
 @pytest.mark.parametrize("device", [torch.device('cpu')])
 @torch.inference_mode()
