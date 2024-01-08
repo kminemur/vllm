@@ -4,6 +4,8 @@ from typing import Dict, List, Optional, Tuple
 
 import torch
 import torch.distributed
+import intel_extension_for_pytorch 
+import oneccl_bindings_for_pytorch
 
 from vllm.config import (CacheConfig, ModelConfig, ParallelConfig,
                          SchedulerConfig)
@@ -13,6 +15,7 @@ from vllm.model_executor.parallel_utils.parallel_state import (
 from vllm.sequence import SamplerOutput, SequenceGroupMetadata
 from vllm.worker.cache_engine import CacheEngine
 from vllm.worker.model_runner import ModelRunner
+from vllm.utils import get_gpu_memory, get_xpu_memory
 
 
 class Worker:
@@ -46,11 +49,17 @@ class Worker:
         self.cache_events = None
         self.gpu_cache = None
         self.cpu_cache = None
+        self.xpu_cache = None
 
     def init_model(self) -> None:
         if self.model_config.device == torch.device('cpu'):
             self.rank = 0
             self.device = torch.device("cpu")
+        elif self.model_config.device == torch.device('xpu'):
+            self.rank = int(os.environ.get('RANK', 0))
+            # world_size = int(os.environ.get("WORLD_SIZE",1))
+            # self.distributed_init_method = os.environ["INIT_FILE"]
+            self.device = torch.device("xpu")            
         else:
             # torch.distributed.all_reduce does not free the input tensor until
             # the synchronization point. This causes the memory usage to grow
@@ -89,15 +98,40 @@ class Worker:
         block_size: int,
         gpu_memory_utilization: float,
         cpu_swap_space: int,
-    ) -> Tuple[int, int]:
+    ) -> Tuple[int, int, int]:
+        if self.model_config.device == torch.device('xpu'):
+            torch.xpu.empty_cache()
+            torch.xpu.reset_peak_memory_stats()
+            # Execute a forward pass with dummy inputs to profile the memory usage
+            # of the model.
+            self.model_runner.profile_run()
+
+            # Calculate the number of blocks that can be allocated with the
+            # profiled peak memory.
+            torch.xpu.synchronize()
+            peak_memory = torch.xpu.max_memory_allocated()
+            total_xpu_memory = get_xpu_memory()
+            cache_block_size = CacheEngine.get_cache_block_size(
+                block_size, self.model_config, self.parallel_config)
+            num_xpu_blocks = int(
+                (total_xpu_memory * gpu_memory_utilization - peak_memory) //
+                cache_block_size)
+            num_cpu_blocks = int(cpu_swap_space // cache_block_size)
+            num_xpu_blocks = max(num_xpu_blocks, 0)
+            num_cpu_blocks = max(num_cpu_blocks, 0)
+            torch.cuda.empty_cache()
+            
+            return 0, num_cpu_blocks, num_xpu_blocks
+            
         if self.model_config.device == torch.device('cpu'):
             cache_block_size = CacheEngine.get_cache_block_size(
                 block_size, self.model_config, self.parallel_config)
             num_gpu_blocks = 0
             num_cpu_blocks = int(cpu_swap_space // cache_block_size)
             num_cpu_blocks = max(num_cpu_blocks, 0)
+            num_xpu_blocks = 0
 
-            return num_gpu_blocks, num_cpu_blocks
+            return num_gpu_blocks, num_cpu_blocks, num_xpu_blocks 
 
         # Profile the memory usage of the model and get the maximum number of
         # cache blocks that can be allocated with the remaining free memory.
@@ -122,7 +156,11 @@ class Worker:
         num_gpu_blocks = max(num_gpu_blocks, 0)
         num_cpu_blocks = max(num_cpu_blocks, 0)
         torch.cuda.empty_cache()
-        return num_gpu_blocks, num_cpu_blocks
+
+        # Reset the seed to ensure that the random state is not affected by
+        # the model initialization and profiling.
+        set_random_seed(self.model_config.seed)
+        return num_gpu_blocks, num_cpu_blocks, 0
 
     def init_cache_engine(self, cache_config: CacheConfig) -> None:
         self.cache_config = cache_config
@@ -131,6 +169,7 @@ class Worker:
         self.cache_events = self.cache_engine.events
         self.gpu_cache = self.cache_engine.gpu_cache
         self.cpu_cache = self.cache_engine.cpu_cache
+        self.xpu_cache = self.cache_engine.xpu_cache
         self.model_runner.set_block_size(self.cache_engine.block_size)
 
     def warm_up_model(self) -> None:
@@ -174,6 +213,8 @@ class Worker:
         kv_caches = None
         if self.model_config.device == torch.device('cpu'):
             kv_caches = self.cpu_cache
+        elif self.model_config.device == torch.device('xpu'):
+            kv_caches = self.xpu_cache
         else:
             kv_caches = self.gpu_cache
 
@@ -203,6 +244,17 @@ def _init_distributed_environment(
         backend = "nccl"
         if parallel_config.device == torch.device('cpu'):
             backend = "gloo"
+        if parallel_config.device == torch.device('xpu'):
+            backend = "ccl"
+            print(f"parallel_config.world_size:{parallel_config.world_size}" )
+            print(f"parallel_config.device:{parallel_config.device}" )
+            parallel_config.world_size = 1
+            # os.environ['RANK'] = str(os.environ.get('RANK', 0))
+            # os.environ['WORLD_SIZE'] = str(os.environ.get('WORLD_SIZE', 1))
+            os.environ['MASTER_ADDR'] = '127.0.0.1'  # your master address
+            os.environ['MASTER_PORT'] = '29500'  # your master port
+            # distributed_init_method=os.environ["INIT_FILE"],
+            distributed_init_method=None
 
         torch.distributed.init_process_group(
             backend=backend,

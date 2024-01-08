@@ -288,8 +288,8 @@ if __name__ == "__main__":
         "--device",
         type=str,
         default="cuda",
-        choices=["cuda", "cpu"],
-        help='device type for vLLM execution, supporting CUDA and CPU.')
+        choices=["cuda", "cpu", "xpu"],
+        help='device type for vLLM execution, supporting CUDA and CPU and XPU.')
     parser.add_argument("--swap-space",
                         type=int,
                         default=4,

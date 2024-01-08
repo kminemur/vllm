@@ -76,13 +76,16 @@ class BlockSpaceManager:
         block_size: int,
         num_gpu_blocks: int,
         num_cpu_blocks: int,
+        num_xpu_blocks: int,
         watermark: float = 0.01,
         sliding_window: Optional[int] = None,
         cpu_only: bool = False,
+        use_xpu: bool = True,
     ) -> None:
         self.block_size = block_size
         self.num_total_gpu_blocks = num_gpu_blocks
         self.num_total_cpu_blocks = num_cpu_blocks
+        self.num_total_xpu_blocks = num_xpu_blocks
 
         self.block_sliding_window = None
         if sliding_window is not None:
@@ -92,18 +95,45 @@ class BlockSpaceManager:
 
         self.watermark = watermark
         assert watermark >= 0.0
-
-        self.watermark_blocks = int(
-            watermark * (num_gpu_blocks if not cpu_only else num_cpu_blocks))
+        num_blocks = 0
+        if use_xpu:
+            num_blocks = num_xpu_blocks
+        elif cpu_only:
+            num_blocks = num_cpu_blocks
+        else:
+            num_blocks = num_gpu_blocks
+        self.watermark_blocks = int(watermark * num_blocks)
         self.gpu_allocator = BlockAllocator(Device.GPU, block_size,
                                             num_gpu_blocks)
         self.cpu_allocator = BlockAllocator(Device.CPU, block_size,
                                             num_cpu_blocks)
+        self.xpu_allocator = BlockAllocator(Device.XPU, block_size,
+                                            num_xpu_blocks)
         # Mapping: seq_id -> BlockTable.
         self.block_tables: Dict[int, BlockTable] = {}
 
         self.cpu_only = cpu_only
-
+        self.use_xpu = use_xpu
+        if self.use_xpu:
+            self.allocator = self.xpu_allocator
+        elif not self.cpu_only:
+            self.allocator = self.gpu_allocator
+        else:
+            self.allocator = self.cpu_allocator
+            
+    def get_num_free_blocks(self):
+        return self.allocator.get_num_free_blocks()
+    
+    def get_num_total_blocks(self):
+        num_total_blocks = 0
+        if self.use_xpu:
+            num_total_blocks = self.num_total_xpu_blocks
+        elif self.cpu_only:
+            num_total_blocks = self.num_total_cpu_blocks
+        else:
+            num_total_blocks = self.num_total_gpu_blocks
+        return num_total_blocks
+        
     def can_allocate(self, seq_group: SequenceGroup) -> AllocStatus:
         # FIXME(woosuk): Here we assume that all sequences in the group share
         # the same prompt. This may not be true for preempted sequences.
@@ -113,9 +143,8 @@ class BlockSpaceManager:
             num_required_blocks = min(num_required_blocks,
                                       self.block_sliding_window)
 
-        num_free_blocks = self.gpu_allocator.get_num_free_blocks(
-        ) if not self.cpu_only else self.cpu_allocator.get_num_free_blocks()
-        num_total_blocks = self.num_total_gpu_blocks if not self.cpu_only else self.num_total_cpu_blocks
+        num_free_blocks = self.get_num_free_blocks()
+        num_total_blocks = self.get_num_total_blocks()
 
         # Use watermark to avoid frequent cache eviction.
         if (num_total_blocks - num_required_blocks < self.watermark_blocks):
@@ -126,14 +155,13 @@ class BlockSpaceManager:
             return AllocStatus.LATER
 
     def _allocate(self) -> PhysicalTokenBlock:
-        if not self.cpu_only:
-            return self.gpu_allocator.allocate()
-        else:
-            return self.cpu_allocator.allocate()
+        return self.allocator.allocate()
 
     def _free(self, block: PhysicalTokenBlock):
         if block.device == Device.CPU:
             self.cpu_allocator.free(block)
+        elif block.device == Device.XPU:
+            self.xpu_allocator.free(block)
         else:
             self.gpu_allocator.free(block)
 
@@ -161,8 +189,7 @@ class BlockSpaceManager:
     def can_append_slot(self, seq_group: SequenceGroup) -> bool:
         # Simple heuristic: If there is at least one free block
         # for each sequence, we can append.
-        num_free_blocks = self.get_num_free_gpu_blocks(
-        ) if not self.cpu_only else self.get_num_free_cpu_blocks()
+        num_free_blocks = self.get_num_free_blocks()
         num_seqs = seq_group.num_seqs(status=SequenceStatus.RUNNING)
         return num_seqs <= num_free_blocks
 
@@ -186,7 +213,7 @@ class BlockSpaceManager:
 
         # We want to append the token to the last physical block.
         last_block = block_table[-1]
-        assert last_block.device == Device.GPU or self.cpu_only
+        # assert last_block.device == Device.GPU or self.cpu_only
         if last_block.ref_count == 1:
             # Not shared with other sequences. Appendable.
             return None
@@ -319,3 +346,6 @@ class BlockSpaceManager:
 
     def get_num_free_cpu_blocks(self) -> int:
         return self.cpu_allocator.get_num_free_blocks()
+    
+    def get_num_free_xpu_blocks(self) -> int:
+        return self.xpu_allocator.get_num_free_blocks()

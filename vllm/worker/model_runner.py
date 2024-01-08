@@ -4,6 +4,7 @@ from typing import Dict, List, Tuple, Union
 import numpy as np
 import torch
 import torch.nn as nn
+import intel_extension_for_pytorch as ipex
 
 from vllm.config import ModelConfig, ParallelConfig, SchedulerConfig
 from vllm.logger import init_logger
@@ -59,6 +60,7 @@ class ModelRunner:
 
     def load_model(self) -> None:
         self.model = get_model(self.model_config)
+        # self.model = ipex.optimize(self.model)
 
     def set_block_size(self, block_size: int) -> None:
         self.block_size = block_size

@@ -39,20 +39,23 @@ class CacheEngine:
         self.block_size = cache_config.block_size
         self.num_gpu_blocks = cache_config.num_gpu_blocks
         self.num_cpu_blocks = cache_config.num_cpu_blocks
+        self.num_xpu_blocks = cache_config.num_xpu_blocks
 
         # Initialize the cache.
         self.gpu_cache = self.allocate_gpu_cache()
+        self.xpu_cache = self.allocate_xpu_cache()
         self.cpu_cache = self.allocate_cpu_cache()
 
-        if not cache_config.cpu_only:
+        if True:
+            self.cache_stream = None
+            self.events = None
+        else:
             # Initialize the stream for caching operations.
             self.cache_stream = torch.cuda.Stream()
             assert self.cache_stream != torch.cuda.current_stream()
             # Initialize the events for stream synchronization.
             self.events = [torch.cuda.Event() for _ in range(self.num_layers)]
-        else:
-            self.cache_stream = None
-            self.events = None
+
 
     def get_key_block_shape(self) -> Tuple[int, int, int, int]:
         element_size = torch.tensor([], dtype=self.dtype).element_size()
@@ -91,6 +94,27 @@ class CacheEngine:
             )
             gpu_cache.append((key_blocks, value_blocks))
         return gpu_cache
+    
+    def allocate_xpu_cache(self) -> List[KVCache]:
+        xpu_cache: List[KVCache] = []
+        if self.num_xpu_blocks == 0:
+            return xpu_cache
+
+        key_block_shape = self.get_key_block_shape()
+        value_block_shape = self.get_value_block_shape()
+        for _ in range(self.num_layers):
+            key_blocks = torch.empty(
+                size=(self.num_gpu_blocks, *key_block_shape),
+                dtype=self.dtype,
+                device="xpu",
+            )
+            value_blocks = torch.empty(
+                size=(self.num_gpu_blocks, *value_block_shape),
+                dtype=self.dtype,
+                device="xpu",
+            )
+            xpu_cache.append((key_blocks, value_blocks))
+        return xpu_cache
 
     def allocate_cpu_cache(self) -> List[KVCache]:
         cpu_cache: List[KVCache] = []
@@ -102,7 +126,7 @@ class CacheEngine:
             # https://docs.nvidia.com/cuda/wsl-user-guide/index.html#known-limitations-for-linux-cuda-applications
             logger.warning("Using 'pin_memory=False' as WSL is detected. "
                            "This may slow down the performance.")
-        pin_memory = not self.cache_config.cpu_only
+        pin_memory = False
         for _ in range(self.num_layers):
             key_blocks = torch.empty(
                 size=(self.num_cpu_blocks, *key_block_shape),
@@ -142,8 +166,8 @@ class CacheEngine:
         self._swap(self.gpu_cache, self.cpu_cache, src_to_dst)
 
     def copy(self, src_to_dsts: Dict[int, List[int]]) -> None:
-        key_caches = [key_cache for key_cache, _ in self.gpu_cache]
-        value_caches = [value_cache for _, value_cache in self.gpu_cache]
+        key_caches = [key_cache for key_cache, _ in self.xpu_cache]
+        value_caches = [value_cache for _, value_cache in self.xpu_cache]
         # NOTE(woosuk): This operation implicitly synchronizes the CPU and GPU.
         cache_ops.copy_blocks(key_caches, value_caches, src_to_dsts)
 

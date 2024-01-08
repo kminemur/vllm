@@ -419,6 +419,7 @@ def _sample(
         if sampling_type == SamplingType.GREEDY:
             sample_results = _greedy_sample(seq_groups, greedy_samples)
         elif sampling_type == SamplingType.RANDOM:
+            category_probs = probs.cpu()[sample_indices.cpu()]
             sample_results = _random_sample(seq_groups, is_prompts,
                                             multinomial_samples)
         elif sampling_type == SamplingType.BEAM:

@@ -9,11 +9,13 @@ import os
 
 from vllm._C import cuda_utils
 
+import intel_extension_for_pytorch 
 
 
 class Device(enum.Enum):
     GPU = enum.auto()
     CPU = enum.auto()
+    XPU = enum.auto()
 
 
 class Counter:
@@ -42,6 +44,14 @@ def get_max_shared_memory_bytes(gpu: int = 0) -> int:
         cudaDevAttrMaxSharedMemoryPerBlockOptin, gpu)
     return int(max_shared_mem)
 
+
+def get_gpu_memory(gpu: int = 0) -> int:
+    """Returns the total memory of the GPU in bytes."""
+    return torch.cuda.get_device_properties(gpu).total_memory
+
+def get_xpu_memory(xpu: int = 0) -> int:
+    """Returns the total memory of the XPU in bytes."""
+    return torch.xpu.get_device_properties(xpu).total_memory
 
 def get_cpu_memory() -> int:
     """Returns the total CPU memory of the node in bytes."""

@@ -292,7 +292,7 @@ XPU_OPS_SOURCES = []
 XPU_CXX_FLAGS = []
 XPU_LD_FLAGS = []
 if BUILD_XPU_OPS:
-    XPU_CXX_FLAGS += ["-DVLLM_BUILD_XPU_OPS", "-fsycl", "-fsycl-targets=spir64"]
+    XPU_CXX_FLAGS += ["-DVLLM_BUILD_XPU_OPS", "-DVLLM_BUILD_XPU_ONLY" "-fsycl", "-fsycl-targets=spir64"]
     XPU_LD_FLAGS += [f"-D_GLIBCXX_USE_CXX11_ABI={ABI}"] + ["-fsycl", "-fsycl-targets=spir64"] + ["-lsycl"]
     XPU_OPS_SOURCES += [
         "csrc/xpu/activation_xpu.cpp",
