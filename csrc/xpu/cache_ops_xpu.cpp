@@ -237,12 +237,14 @@ void copy_blocks_xpu_impl_(
       int64_t source_offset = element_num_per_block * mapping_pairs[pair].first;
       int64_t target_offset =
           element_num_per_block * mapping_pairs[pair].second;
-      scalar_sycl_t *key_cache_ptr = (scalar_sycl_t*)key_caches[layer].data_ptr<scalar_t>();
-      scalar_sycl_t *source_ptr = key_cache_ptr + source_offset;
-      scalar_sycl_t *target_ptr = key_cache_ptr + target_offset;
+      scalar_sycl_t* key_cache_ptr =
+          (scalar_sycl_t*)key_caches[layer].data_ptr<scalar_t>();
+      scalar_sycl_t* source_ptr = key_cache_ptr + source_offset;
+      scalar_sycl_t* target_ptr = key_cache_ptr + target_offset;
       q.memcpy(target_ptr, source_ptr, block_bytes);
 
-      scalar_sycl_t *value_cache_ptr = (scalar_sycl_t*)value_caches[layer].data_ptr<scalar_t>();
+      scalar_sycl_t* value_cache_ptr =
+          (scalar_sycl_t*)value_caches[layer].data_ptr<scalar_t>();
       source_ptr = value_cache_ptr + source_offset;
       target_ptr = value_cache_ptr + target_offset;
       q.memcpy(target_ptr, source_ptr, block_bytes);
@@ -329,7 +331,17 @@ void swap_blocks_xpu(
     torch::Tensor& src,
     torch::Tensor& dst,
     const std::map<int64_t, int64_t>& block_mapping) {
-  // do nothing.
+  char* src_ptr = static_cast<char*>(src.data_ptr());
+  char* dst_ptr = static_cast<char*>(dst.data_ptr());
+  const int64_t block_size_in_bytes = src.element_size() * src[0].numel();
+  sycl::queue q(sycl::default_selector_v);
+  for (const auto& pair : block_mapping) {
+    int64_t src_block_number = pair.first;
+    int64_t dst_block_number = pair.second;
+    int64_t src_offset = src_block_number * block_size_in_bytes;
+    int64_t dst_offset = dst_block_number * block_size_in_bytes;
+    q.memcpy(dst_ptr + dst_offset, src_ptr + src_offset, block_size_in_bytes);
+  }
 }
 
 void gather_cached_kv_xpu(

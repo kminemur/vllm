@@ -9,6 +9,8 @@ from xformers.ops.fmha.attn_bias import BlockDiagonalCausalMask
 from vllm._C import ops
 from vllm.utils import get_max_shared_memory_bytes
 
+import intel_extension_for_pytorch as ipex
+
 FLOAT32_BYTES = torch.finfo(torch.float).bits // 8
 # This will change depending on the compute capability.
 # - 512 as a buffer
@@ -164,7 +166,7 @@ def test_paged_attention(
                                                 num_kv_heads, head_size, dtype,
                                                 device, seed)
     key_cache, value_cache = key_caches[0], value_caches[0]
-
+ 
     # Call the paged attention kernel.
     output = torch.empty_like(query)
     if version == "v1":
@@ -234,6 +236,8 @@ def test_paged_attention(
     # implementations, there is a small numerical difference in the two
     # outputs. Thus, we use a relaxed tolerance for the test.
     assert torch.allclose(output, ref_output, atol=1e-3, rtol=1e-3)
+    if device == torch.device('xpu'):
+        torch.xpu.empty_cache()
 
 
 @pytest.mark.parametrize("version", ["v1"])
@@ -263,6 +267,33 @@ def test_paged_attention_cpu(
     test_paged_attention(kv_cache_factory, version, num_seqs, num_heads,
                          head_size, use_alibi, block_size, dtype, device, seed)
 
+
+@pytest.mark.parametrize("version", ["v1"])
+@pytest.mark.parametrize("num_seqs", NUM_GEN_SEQS)
+@pytest.mark.parametrize("num_heads", NUM_HEADS)
+@pytest.mark.parametrize("head_size", HEAD_SIZES)
+@pytest.mark.parametrize("use_alibi", [False])
+@pytest.mark.parametrize(
+    "block_size", [16]
+)  # FIXME: Currently we only use 16 due to the limitation of the YMM register number.
+@pytest.mark.parametrize("dtype", DTYPES)
+@pytest.mark.parametrize("seed", SEEDS)
+@pytest.mark.parametrize("device", [torch.device('xpu')])
+@torch.inference_mode()
+def test_paged_attention_xpu(
+    kv_cache_factory,
+    version: str,
+    num_seqs: int,
+    num_heads: Tuple[int, int],
+    head_size: int,
+    use_alibi: bool,
+    block_size: int,
+    dtype: torch.dtype,
+    device: torch.device,
+    seed: int,
+) -> None:
+    test_paged_attention(kv_cache_factory, version, num_seqs, num_heads,
+                         head_size, use_alibi, block_size, dtype, device, seed)
 
 def ref_multi_query_kv_attention(
     cu_seq_lens: List[int],
@@ -379,6 +410,25 @@ def test_multi_query_kv_attention(
 @pytest.mark.parametrize("device", [torch.device('cpu')])
 @torch.inference_mode()
 def test_multi_query_kv_attention_cpu(
+    num_seqs: int,
+    num_heads: Tuple[int, int],
+    head_size: int,
+    dtype: torch.dtype,
+    device: torch.device,
+    seed: int,
+) -> None:
+    test_multi_query_kv_attention(num_seqs, num_heads, head_size, dtype,
+                                  device, seed)
+
+
+@pytest.mark.parametrize("num_seqs", NUM_PREFILL_SEQS)
+@pytest.mark.parametrize("num_heads", NUM_HEADS)
+@pytest.mark.parametrize("head_size", HEAD_SIZES)
+@pytest.mark.parametrize("dtype", [torch.float, torch.bfloat16])
+@pytest.mark.parametrize("seed", SEEDS)
+@pytest.mark.parametrize("device", [torch.device('xpu')])
+@torch.inference_mode()
+def test_multi_query_kv_attention_xpu(
     num_seqs: int,
     num_heads: Tuple[int, int],
     head_size: int,

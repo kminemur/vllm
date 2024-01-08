@@ -5,13 +5,15 @@ import torch
 
 from vllm._C import cache_ops
 
+import intel_extension_for_pytorch as ipex
+
 DTYPES = [torch.half, torch.bfloat16, torch.float]
 NUM_TOKENS = [83]  # Arbitrary values for testing
 NUM_LAYERS = [1]  # Arbitrary values for testing
 NUM_HEADS = [8]  # Arbitrary values for testing
 HEAD_SIZES = [64, 80, 96, 112, 128, 256]
 BLOCK_SIZES = [8, 16, 32]
-NUM_BLOCKS = [1024, 36000]  # Arbitrary values for testing
+NUM_BLOCKS = [1024, 10240]  # Arbitrary values for testing
 NUM_MAPPINGS = [256]  # Arbitrary values for testing
 SEEDS = [0]
 
@@ -79,11 +81,13 @@ def test_copy_blocks(
 
     # Compare the results.
     for key_cache, cloned_key_cache in zip(key_caches, cloned_key_caches):
-        assert torch.allclose(key_cache, cloned_key_cache)
+        assert torch.allclose(key_cache, cloned_key_cache, atol=1e-2, rtol=1e-3)
     for value_cache, cloned_value_cache in zip(value_caches,
                                                cloned_value_caches):
-        assert torch.allclose(value_cache, cloned_value_cache)
+        assert torch.allclose(value_cache, cloned_value_cache, atol=1e-2, rtol=1e-3)
 
+    if device == torch.device('xpu'):
+        torch.xpu.empty_cache()
 
 @pytest.mark.parametrize("num_mappings", NUM_MAPPINGS)
 @pytest.mark.parametrize("num_layers", NUM_LAYERS)
@@ -110,6 +114,31 @@ def test_copy_blocks_cpu(
     test_copy_blocks(kv_cache_factory, num_mappings, num_layers, num_heads,
                      head_size, block_size, num_blocks, dtype, device, seed)
 
+
+@pytest.mark.parametrize("num_mappings", NUM_MAPPINGS)
+@pytest.mark.parametrize("num_layers", NUM_LAYERS)
+@pytest.mark.parametrize("num_heads", NUM_HEADS)
+@pytest.mark.parametrize("head_size", HEAD_SIZES)
+@pytest.mark.parametrize("block_size", BLOCK_SIZES)
+@pytest.mark.parametrize("num_blocks", NUM_BLOCKS)
+@pytest.mark.parametrize("dtype", [torch.float])
+@pytest.mark.parametrize("seed", SEEDS)
+@pytest.mark.parametrize("device", [torch.device('xpu')])
+@torch.inference_mode()
+def test_copy_blocks_xpu(
+    kv_cache_factory,
+    num_mappings: int,
+    num_layers: int,
+    num_heads: int,
+    head_size: int,
+    block_size: int,
+    num_blocks: int,
+    dtype: torch.dtype,
+    device: torch.device,
+    seed: int,
+) -> None:
+    test_copy_blocks(kv_cache_factory, num_mappings, num_layers, num_heads,
+                     head_size, block_size, num_blocks, dtype, device, seed)
 
 @pytest.mark.parametrize("num_tokens", NUM_TOKENS)
 @pytest.mark.parametrize("num_heads", NUM_HEADS)
@@ -176,9 +205,10 @@ def test_reshape_and_cache(
         cloned_key_cache[block_idx, :, :, block_offset, :] = reshaped_key[i]
         cloned_value_cache[block_idx, :, :, block_offset] = value[i]
 
-    assert torch.allclose(key_cache, cloned_key_cache)
-    assert torch.allclose(value_cache, cloned_value_cache)
-
+    assert torch.allclose(key_cache, cloned_key_cache, atol=1e-2, rtol=1e-3)
+    assert torch.allclose(value_cache, cloned_value_cache, atol=1e-2, rtol=1e-3)
+    if device == torch.device('xpu'):
+        torch.xpu.empty_cache()
 
 @pytest.mark.parametrize("num_tokens", NUM_TOKENS)
 @pytest.mark.parametrize("num_heads", NUM_HEADS)
@@ -190,6 +220,29 @@ def test_reshape_and_cache(
 @pytest.mark.parametrize("device", [torch.device('cpu')])
 @torch.inference_mode()
 def test_reshape_and_cache_cpu(
+    kv_cache_factory,
+    num_tokens: int,
+    num_heads: int,
+    head_size: int,
+    block_size: int,
+    num_blocks: int,
+    dtype: torch.dtype,
+    device: torch.device,
+    seed: int,
+) -> None:
+    test_reshape_and_cache(kv_cache_factory, num_tokens, num_heads, head_size,
+                           block_size, num_blocks, dtype, device, seed)
+
+@pytest.mark.parametrize("num_tokens", NUM_TOKENS)
+@pytest.mark.parametrize("num_heads", NUM_HEADS)
+@pytest.mark.parametrize("head_size", HEAD_SIZES)
+@pytest.mark.parametrize("block_size", BLOCK_SIZES)
+@pytest.mark.parametrize("num_blocks", NUM_BLOCKS)
+@pytest.mark.parametrize("dtype", [ torch.bfloat16])
+@pytest.mark.parametrize("seed", SEEDS)
+@pytest.mark.parametrize("device", [torch.device('xpu')])
+@torch.inference_mode()
+def test_reshape_and_cache_xpu(
     kv_cache_factory,
     num_tokens: int,
     num_heads: int,

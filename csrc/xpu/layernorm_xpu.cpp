@@ -151,7 +151,7 @@ void rms_norm_xpu(
     torch::Tensor& weight,
     float epsilon) {
   switch (weight.device().type()) {
-    case c10::DeviceType::CPU:
+    case c10::DeviceType::XPU:
       return _rms_norm_xpu(out, input, weight, epsilon);
     default:
       TORCH_CHECK(false, "Unsupported device type.")
@@ -300,7 +300,7 @@ void fused_add_rms_norm_xpu(
     torch::Tensor& weight,
     float epsilon) {
   switch (weight.device().type()) {
-    case c10::DeviceType::CPU:
+    case c10::DeviceType::XPU:
       return _fused_add_rms_norm_xpu(input, residual, weight, epsilon);
     default:
       TORCH_CHECK(false, "Unsupported device type.")

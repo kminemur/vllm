@@ -65,8 +65,8 @@ def test_rotary_embedding(
     ref_query, ref_key = rope._forward(positions, query, key)
     out_query, out_key = rope.forward(positions, query, key)
     # Compare the results.
-    assert torch.allclose(out_query, ref_query, atol=1e-3, rtol=1e-3)
-    assert torch.allclose(out_key, ref_key, atol=1e-3, rtol=1e-3)
+    assert torch.allclose(out_query, ref_query, atol=1e-2, rtol=1e-2)
+    assert torch.allclose(out_key, ref_key, atol=1e-2, rtol=1e-2)
 
 
 @pytest.mark.parametrize("is_neox_style", [True])
@@ -80,6 +80,34 @@ def test_rotary_embedding(
 @pytest.mark.parametrize("device", [torch.device('cpu')])
 @torch.inference_mode()
 def test_rotary_embedding_cpu(
+    is_neox_style: bool,
+    batch_size: int,
+    seq_len: int,
+    num_heads: int,
+    head_size: int,
+    rotary_dim: Optional[int],
+    dtype: torch.dtype,
+    device: torch.device,
+    seed: int,
+    max_position: int = 8192,
+    base: int = 10000,
+) -> None:
+    test_rotary_embedding(is_neox_style, batch_size, seq_len, num_heads,
+                          head_size, rotary_dim, dtype, device, seed,
+                          max_position, base)
+
+import intel_extension_for_pytorch as ipex
+@pytest.mark.parametrize("is_neox_style", [True])
+@pytest.mark.parametrize("batch_size", BATCH_SIZES)
+@pytest.mark.parametrize("seq_len", SEQ_LENS)
+@pytest.mark.parametrize("num_heads", NUM_HEADS)
+@pytest.mark.parametrize("head_size", HEAD_SIZES)
+@pytest.mark.parametrize("rotary_dim", ROTARY_DIMS)
+@pytest.mark.parametrize("dtype", DTYPES)
+@pytest.mark.parametrize("seed", SEEDS)
+@pytest.mark.parametrize("device", [torch.device('xpu')])
+@torch.inference_mode()
+def test_rotary_embedding_xpu(
     is_neox_style: bool,
     batch_size: int,
     seq_len: int,

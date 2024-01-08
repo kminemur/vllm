@@ -67,3 +67,22 @@ def test_rms_norm_cpu(
     device: torch.device,
 ) -> None:
     test_rms_norm(num_tokens, hidden_size, add_residual, dtype, seed, device)
+
+import intel_extension_for_pytorch as ipex
+
+@pytest.mark.parametrize("num_tokens", NUM_TOKENS)
+@pytest.mark.parametrize("hidden_size", [64, 768, 2048, 5120, 8192])
+@pytest.mark.parametrize("add_residual", ADD_RESIDUAL)
+@pytest.mark.parametrize("dtype", [torch.float, torch.bfloat16, torch.half])
+@pytest.mark.parametrize("seed", SEEDS)
+@pytest.mark.parametrize("device", [torch.device('xpu')])
+@torch.inference_mode()
+def test_rms_norm_xpu(
+    num_tokens: int,
+    hidden_size: int,
+    add_residual: bool,
+    dtype: torch.dtype,
+    seed: int,
+    device: torch.device,
+) -> None:
+    test_rms_norm(num_tokens, hidden_size, add_residual, dtype, seed, device)

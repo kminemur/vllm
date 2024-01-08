@@ -199,7 +199,7 @@ void rotary_embedding_xpu(
     bool is_neox) {
   TORCH_CHECK(is_neox);
   switch (positions.device().type()) {
-    case c10::DeviceType::CPU:
+    case c10::DeviceType::XPU:
       return _rotary_embedding_xpu(
           positions, query, key, head_size, cos_sin_cache);
     default:

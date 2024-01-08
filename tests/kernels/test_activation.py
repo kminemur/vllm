@@ -2,6 +2,7 @@ import pytest
 import torch
 
 from vllm.model_executor.layers.activation import FastGELU, NewGELU, SiluAndMul
+import intel_extension_for_pytorch as ipex
 
 DTYPES = [torch.half, torch.bfloat16, torch.float]
 NUM_TOKENS = [7, 83, 2048]  # Arbitrary values for testing
@@ -46,7 +47,21 @@ def test_silu_and_mul_cpu(
 ) -> None:
     test_silu_and_mul(num_tokens, d, dtype, device, seed)
 
-
+@pytest.mark.parametrize("num_tokens", NUM_TOKENS)
+@pytest.mark.parametrize("d", D)
+@pytest.mark.parametrize("dtype", [torch.half, torch.float, torch.bfloat16])
+@pytest.mark.parametrize("seed", SEEDS)
+@pytest.mark.parametrize("device", [torch.device('xpu')])
+@torch.inference_mode()
+def test_silu_and_mul_xpu(
+    num_tokens: int,
+    d: int,
+    dtype: torch.dtype,
+    device: torch.device,
+    seed: int,
+) -> None:
+    test_silu_and_mul(num_tokens, d, dtype, device, seed)
+    
 @pytest.mark.parametrize("num_tokens", NUM_TOKENS)
 @pytest.mark.parametrize("d", D)
 @pytest.mark.parametrize("dtype", DTYPES)

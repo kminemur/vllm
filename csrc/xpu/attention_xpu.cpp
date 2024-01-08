@@ -46,15 +46,17 @@ struct paged_attention_xpu_v1_impl_ {
     TORCH_CHECK((max_context_len_padded * sizeof(float)) % 64 == 0);
 
     sycl::queue task_q(sycl::gpu_selector_v);
-    sycl::buffer<scalar_sycl_t, 1> out_buf((scalar_sycl_t*)out, num_seqs * num_heads * HEAD_SIZE);
-    sycl::buffer<scalar_sycl_t, 1> q_buf((scalar_sycl_t*)q, num_seqs * num_heads * HEAD_SIZE);
+    sycl::buffer<scalar_sycl_t, 1> out_buf(
+        (scalar_sycl_t*)out, num_seqs * num_heads * HEAD_SIZE);
+    sycl::buffer<scalar_sycl_t, 1> q_buf(
+        (scalar_sycl_t*)q, num_seqs * num_heads * HEAD_SIZE);
     sycl::buffer<int, 1> context_lens_buf(context_lens, num_seqs);
     sycl::buffer<int, 1> block_tables_buf(
         block_tables, num_seqs * max_num_blocks_per_seq);
-    sycl::buffer<scalar_sycl_t, 1> k_cache_buf((scalar_sycl_t*)
-        k_cache, num_blocks * kv_block_stride);
-    sycl::buffer<scalar_sycl_t, 1> v_cache_buf((scalar_sycl_t*)
-        v_cache, num_blocks * kv_block_stride);
+    sycl::buffer<scalar_sycl_t, 1> k_cache_buf(
+        (scalar_sycl_t*)k_cache, num_blocks * kv_block_stride);
+    sycl::buffer<scalar_sycl_t, 1> v_cache_buf(
+        (scalar_sycl_t*)v_cache, num_blocks * kv_block_stride);
     const int new_kv_block_stride = kv_block_stride;
     size_t logits_bytes = num_heads * max_context_len_padded * sizeof(float);
     float* logits = (float*)sycl::aligned_alloc_device(
@@ -63,12 +65,14 @@ struct paged_attention_xpu_v1_impl_ {
         task_q.get_device(),
         task_q.get_context()); // Cacheline alignment for each context token.
                                // [head_num, max_context_len_padded]
-
-    std::memset(out, 0, num_seqs * num_heads * HEAD_SIZE * sizeof(scalar_t));
+    //  float* logits = (float*)sycl::malloc_device(logits_bytes, task_q.get_device(),task_q.get_context());
+    // sycl::buffer<float, 1> logits_buf(
+    //     logits, num_heads * max_context_len_padded);
+    task_q.memset(out, 0, num_seqs * num_heads * HEAD_SIZE * sizeof(scalar_t));
 
     for (int seq_idx = 0; seq_idx < num_seqs; ++seq_idx) {
-      int context_len = context_lens[seq_idx];
-      const int block_num = (context_len + BLOCK_SIZE - 1) / BLOCK_SIZE;
+      // int context_len = context_lens[seq_idx];
+      // const int block_num = (context_len + BLOCK_SIZE - 1) / BLOCK_SIZE;
       sycl::event reset_logits = task_q.memset(logits, 0, logits_bytes);
       reset_logits.wait();
 
@@ -81,6 +85,8 @@ struct paged_attention_xpu_v1_impl_ {
 
         h.parallel_for(
             sycl::range(num_heads, HEAD_SIZE / x, x), [=](sycl::item<3> item) {
+              int context_len = context_lens_acc[seq_idx];
+              const int block_num = (context_len + BLOCK_SIZE - 1) / BLOCK_SIZE;
               size_t head_idx = item[0];
               size_t x_idx = item[1];
               size_t i = item[2];
@@ -111,8 +117,12 @@ struct paged_attention_xpu_v1_impl_ {
 
       // Compute softmax
       auto e2 = task_q.submit([&](auto& h) {
+        sycl::accessor context_lens_acc(context_lens_buf, h, sycl::read_only);
         h.parallel_for(sycl::range(num_heads), [=](sycl::item<1> item) {
           size_t head_idx = item[0];
+          int context_len = context_lens_acc[seq_idx];
+          const int block_num = (context_len + BLOCK_SIZE - 1) / BLOCK_SIZE;
+
           float* head_logit_ptr = logits + head_idx * max_context_len_padded;
           float max_logit = head_logit_ptr[0];
           for (int i = 1; i < context_len; ++i) {
@@ -141,12 +151,16 @@ struct paged_attention_xpu_v1_impl_ {
       // Compute value
       auto e3 = task_q.submit([&](auto& h) {
         sycl::accessor output_acc(out_buf, h, sycl::read_write);
+        sycl::accessor context_lens_acc(context_lens_buf, h, sycl::read_only);
         sycl::accessor v_cache_acc(v_cache_buf, h, sycl::read_only);
+        sycl::accessor k_cache_acc(k_cache_buf, h, sycl::read_only);
         sycl::accessor block_tables_acc(block_tables_buf, h, sycl::read_only);
 
         h.parallel_for(
             sycl::range(num_heads, head_partition_num, 16),
             [=](sycl::item<3> item) {
+              int context_len = context_lens_acc[seq_idx];
+              const int block_num = (context_len + BLOCK_SIZE - 1) / BLOCK_SIZE;
               size_t head_idx = item[0];
               size_t head_part_idx = item[1];
               size_t i = item[2];
