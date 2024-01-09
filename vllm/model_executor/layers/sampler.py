@@ -402,7 +402,7 @@ def _sample(
                 if is_prompt:
                     _, sampling_params = seq_group
                     max_best_of = max(max_best_of, sampling_params.best_of)
-            multinomial_samples = _multinomial(probs[sample_indices],
+            multinomial_samples = _multinomial(probs.cpu()[sample_indices.cpu()],
                                                max_best_of)
         elif sampling_type == SamplingType.BEAM:
             beam_search_logprobs = logprobs[sample_indices]
@@ -419,7 +419,6 @@ def _sample(
         if sampling_type == SamplingType.GREEDY:
             sample_results = _greedy_sample(seq_groups, greedy_samples)
         elif sampling_type == SamplingType.RANDOM:
-            category_probs = probs.cpu()[sample_indices.cpu()]
             sample_results = _random_sample(seq_groups, is_prompts,
                                             multinomial_samples)
         elif sampling_type == SamplingType.BEAM:

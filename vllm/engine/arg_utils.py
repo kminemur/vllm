@@ -227,7 +227,8 @@ class EngineArgs:
                                    self.gpu_memory_utilization,
                                    self.swap_space,
                                    model_config.get_sliding_window(),
-                                   self.device == 'cpu')
+                                   self.device == 'cpu',
+                                   self.device == 'xpu')
         parallel_config = ParallelConfig(self.pipeline_parallel_size,
                                          self.tensor_parallel_size,
                                          self.worker_use_ray,

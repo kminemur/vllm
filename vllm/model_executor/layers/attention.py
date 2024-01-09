@@ -88,9 +88,6 @@ class PagedAttention(nn.Module):
         value = value.view(-1, self.num_kv_heads, self.head_size).to("xpu")
         slot_mapping = input_metadata.slot_mapping.flatten().to("xpu")
 
-        if cache_event is not None:
-            cache_event.wait()
-
         # Reshape the keys and values and store them in the cache.
         # If key_cache and value_cache are not provided, the new key and value
         # vectors will not be cached. This happens during the initial memory

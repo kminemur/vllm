@@ -211,8 +211,12 @@ class ModelRunner:
 
         # When using CUDA graph, we don't need to make the tensors on the GPU
         # because they will be eventually copied to the designated GPU buffer.
-        device = "cpu" if use_captured_graph or self.device.type == "cpu" else "cuda"
-        pin_memory = use_captured_graph and not self.in_wsl and self.device.type == "cuda"
+        if self.device.type == "xpu":
+            device = "xpu"
+            pin_memory = False
+        else:
+            device = "cpu" if use_captured_graph or self.device.type == "cpu" else "cuda"
+            pin_memory = use_captured_graph and not self.in_wsl and self.device.type == "cuda"
         input_tokens = _make_tensor_with_pad(input_tokens,
                                              max_len=1,
                                              pad=0,
@@ -315,10 +319,10 @@ class ModelRunner:
         selected_token_indices = _async_h2d(selected_token_indices,
                                             dtype=torch.long,
                                             device=self.device,
-                                            pin_memory=not self.in_wsl and not self.device.type == "cpu")
+                                            pin_memory=not self.in_wsl and not self.device.type == "cpu" and not self.device.type == "xpu")
         categorized_sample_indices = {
             t: _async_h2d(seq_ids, dtype=torch.int, device=self.device,
-                                            pin_memory=not self.in_wsl and not self.device.type == "cpu")
+                                            pin_memory=not self.in_wsl and not self.device.type == "cpu" and not self.device.type == "xpu")
             for t, seq_ids in categorized_sample_indices.items()
         }
 
@@ -403,7 +407,8 @@ class ModelRunner:
         num_layers = self.model_config.get_num_layers(self.parallel_config)
         kv_caches = [(None, None)] * num_layers
         self.execute_model(seqs, kv_caches)
-        torch.cuda.synchronize()
+        if self.device == "cuda":
+            torch.cuda.synchronize()
         return
 
     @torch.inference_mode()

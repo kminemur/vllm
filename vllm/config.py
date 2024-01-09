@@ -89,7 +89,7 @@ class ModelConfig:
         self.max_context_len_to_capture = max_context_len_to_capture
         self.device = torch.device(device)
 
-        if device == "cpu" and not enforce_eager:
+        if (device == "cpu" or device == "xpu") and not enforce_eager:
             self.enforce_eager = True
 
         if os.environ.get("VLLM_USE_MODELSCOPE", "False").lower() == "true":
@@ -292,12 +292,14 @@ class CacheConfig:
         swap_space: int,
         sliding_window: Optional[int] = None,
         cpu_only: bool = False,
+        use_xpu: bool = True,
     ) -> None:
         self.block_size = block_size
         self.gpu_memory_utilization = gpu_memory_utilization
         self.swap_space_bytes = swap_space * _GB
         self.sliding_window = sliding_window
         self.cpu_only = cpu_only
+        self.use_xpu = use_xpu
         self._verify_args()
 
         # Will be set after profiling.
