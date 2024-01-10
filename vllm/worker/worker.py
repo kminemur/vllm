@@ -264,7 +264,7 @@ def _init_distributed_environment(
         )
 
     # A small all_reduce for warmup.
-    torch.distributed.all_reduce(torch.zeros(1, device=parallel_config.device))
+    # torch.distributed.all_reduce(torch.zeros(1, device=parallel_config.device))
     initialize_model_parallel(parallel_config.tensor_parallel_size,
                               parallel_config.pipeline_parallel_size)
 

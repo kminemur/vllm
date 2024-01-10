@@ -60,7 +60,7 @@ class ModelRunner:
 
     def load_model(self) -> None:
         self.model = get_model(self.model_config)
-        # self.model = ipex.optimize(self.model)
+        self.model = ipex.optimize(self.model)
 
     def set_block_size(self, block_size: int) -> None:
         self.block_size = block_size

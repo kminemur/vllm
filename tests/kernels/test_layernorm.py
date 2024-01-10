@@ -36,7 +36,7 @@ def test_rms_norm(
     x = torch.randn(num_tokens, hidden_size, dtype=dtype, device=device)
     x *= scale
     residual = torch.randn_like(x) * scale if add_residual else None
-
+    # torch.xpu.synchronize()
     # NOTE(woosuk): The reference implementation should be executed first
     # because the custom kernel is in-place.
     ref_out = layer._forward(x, residual)

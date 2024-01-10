@@ -83,10 +83,10 @@ class PagedAttention(nn.Module):
         """
         batch_size, seq_len, hidden_size = query.shape
         # Reshape the query, key, and value tensors.
-        query = query.view(-1, self.num_heads, self.head_size).to("xpu")
-        key = key.view(-1, self.num_kv_heads, self.head_size).to("xpu")
-        value = value.view(-1, self.num_kv_heads, self.head_size).to("xpu")
-        slot_mapping = input_metadata.slot_mapping.flatten().to("xpu")
+        query = query.view(-1, self.num_heads, self.head_size)
+        key = key.view(-1, self.num_kv_heads, self.head_size)
+        value = value.view(-1, self.num_kv_heads, self.head_size)
+        slot_mapping = input_metadata.slot_mapping.flatten()
 
         # Reshape the keys and values and store them in the cache.
         # If key_cache and value_cache are not provided, the new key and value
@@ -161,10 +161,12 @@ class PagedAttention(nn.Module):
             #     op=xops.fmha.MemoryEfficientAttentionFlashAttentionOp[0] if
             #     (is_hip()) else None,
             # ) if not self.cpu_only else 
+            attn_mask = input_metadata.attn_bias.materialize((1, seq_len * batch_size, seq_len * batch_size), dtype=query.dtype, device=query.device)
             out = torch.nn.functional.scaled_dot_product_attention(
-                query.movedim(1, query.dim() -2).to("xpu"), key.movedim(1, query.dim() - 2).to("xpu"),
-                value.movedim(1, value.dim() - 2).to("xpu"), 
-                input_metadata.attn_bias.materialize((query.shape[0], query.shape[2], query.shape[1], key.shape[1]), dtype=query.dtype, device="xpu").to("xpu"),
+                query.movedim(1, query.dim() -2),
+                key.movedim(1, query.dim() - 2),
+                value.movedim(1, value.dim() - 2), 
+                attn_mask,
                 0.0).movedim(query.dim() - 2, 1).contiguous()
             output = out.view_as(query).to(query.dtype)
             

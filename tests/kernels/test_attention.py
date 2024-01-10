@@ -14,8 +14,8 @@ import intel_extension_for_pytorch as ipex
 FLOAT32_BYTES = torch.finfo(torch.float).bits // 8
 # This will change depending on the compute capability.
 # - 512 as a buffer
-MAX_SEQ_LEN = get_max_shared_memory_bytes() // FLOAT32_BYTES - 512
-# MAX_SEQ_LEN = 1024
+# MAX_SEQ_LEN = get_max_shared_memory_bytes() // FLOAT32_BYTES - 512
+MAX_SEQ_LEN = 1024
 NUM_BLOCKS = 4000  # Arbitrary values for testing
 PARTITION_SIZE = 512
 
@@ -160,13 +160,14 @@ def test_paged_attention(
         ]
         block_tables.append(block_table)
     block_tables = torch.tensor(block_tables, dtype=torch.int, device=device)
-
     # Create the KV caches.
     key_caches, value_caches = kv_cache_factory(NUM_BLOCKS, block_size, 1,
                                                 num_kv_heads, head_size, dtype,
                                                 device, seed)
     key_cache, value_cache = key_caches[0], value_caches[0]
- 
+    if device == torch.device('xpu'):
+        torch.xpu.synchronize()
+
     # Call the paged attention kernel.
     output = torch.empty_like(query)
     if version == "v1":
