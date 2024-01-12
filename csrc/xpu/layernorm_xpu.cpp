@@ -8,6 +8,7 @@
 #include <torch/extension.h>
 #include <algorithm>
 #include "xpu_types.hpp"
+#include "utils.h"
 
 template <typename scalar_t, typename scalar_sycl_t>
 void rms_norm_xpu_impl_(
@@ -17,7 +18,7 @@ void rms_norm_xpu_impl_(
     const float epsilon,
     const size_t num_tokens,
     const size_t hidden_size) {
-  sycl::queue q(sycl::gpu_selector_v);
+    sycl::queue& q = vllm::xpu::vllmGetQueue();
   sycl::buffer<scalar_sycl_t, 2> input_buf(
       (scalar_sycl_t*)input, sycl::range(num_tokens, hidden_size));
   sycl::buffer<scalar_sycl_t, 1> weight_buf(
@@ -166,7 +167,8 @@ void fused_add_rms_norm_xpu_impl_(
     const float epsilon,
     const size_t num_tokens,
     const int hidden_size) {
-  sycl::queue q(sycl::gpu_selector_v);
+    sycl::queue& q = vllm::xpu::vllmGetQueue();
+
   sycl::buffer<scalar_sycl_t, 2> input_buf(
       (scalar_sycl_t*)input, sycl::range(num_tokens, hidden_size));
   sycl::buffer<scalar_sycl_t, 2> residual_buf(

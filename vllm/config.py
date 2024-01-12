@@ -292,7 +292,7 @@ class CacheConfig:
         swap_space: int,
         sliding_window: Optional[int] = None,
         cpu_only: bool = False,
-        use_xpu: bool = True,
+        use_xpu: bool = False,
     ) -> None:
         self.block_size = block_size
         self.gpu_memory_utilization = gpu_memory_utilization

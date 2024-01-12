@@ -7,6 +7,7 @@
 #include "xpu_types.hpp"
 
 #include <torch/extension.h>
+#include "utils.h"
 
 template <typename T>
 __inline__ T silu_xpu(const T& x) {
@@ -20,7 +21,7 @@ void silu_and_mul_xpu_impl_(
     int d,
     const scalar_t* __restrict__ input, //
     scalar_t* __restrict__ output) {
-  sycl::queue q{sycl::gpu_selector_v};
+  sycl::queue& q = vllm::xpu::vllmGetQueue();
   sycl::buffer<scalar_sycl_t, 1> input_buf(
       (scalar_sycl_t*)input, num_tokens * d * 2);
   sycl::buffer<scalar_sycl_t, 1> output_buf(

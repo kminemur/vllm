@@ -7,6 +7,7 @@
 #include "xpu_types.hpp"
 
 #include <torch/extension.h>
+#include "utils.h"
 
 template <typename scalar_t, typename scalar_sycl_t>
 void reshape_and_cache_xpu_impl_(
@@ -25,8 +26,7 @@ void reshape_and_cache_xpu_impl_(
     const int key_cache_stride,
     const int key_cache_num_tokens) {
   const int block_elem_num = num_heads * head_size * block_size;
-
-  sycl::queue q(sycl::gpu_selector_v);
+  sycl::queue& q = vllm::xpu::vllmGetQueue();
   sycl::buffer<scalar_sycl_t> key_buf(
       (scalar_sycl_t*)key, num_tokens * key_stride);
   sycl::buffer<scalar_sycl_t> value_buf(
@@ -230,8 +230,8 @@ void copy_blocks_xpu_impl_(
     const int layer_num) {
   const size_t pair_num = mapping_pairs.size();
   const size_t block_bytes = sizeof(scalar_t) * element_num_per_block;
+  sycl::queue& q = vllm::xpu::vllmGetQueue();
 
-  sycl::queue q(sycl::default_selector_v);
   for (int layer = 0; layer < layer_num; ++layer) {
     for (size_t pair = 0; pair < pair_num; ++pair) {
       int64_t source_offset = element_num_per_block * mapping_pairs[pair].first;
@@ -334,7 +334,7 @@ void swap_blocks_xpu(
   char* src_ptr = static_cast<char*>(src.data_ptr());
   char* dst_ptr = static_cast<char*>(dst.data_ptr());
   const int64_t block_size_in_bytes = src.element_size() * src[0].numel();
-  sycl::queue q(sycl::default_selector_v);
+  sycl::queue& q = vllm::xpu::vllmGetQueue();
   for (const auto& pair : block_mapping) {
     int64_t src_block_number = pair.first;
     int64_t dst_block_number = pair.second;

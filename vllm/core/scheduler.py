@@ -76,6 +76,7 @@ class Scheduler:
             num_xpu_blocks=self.cache_config.num_xpu_blocks,
             sliding_window=self.cache_config.sliding_window,
             cpu_only=cache_config.cpu_only,
+            use_xpu=cache_config.use_xpu,
         )
 
         # TODO(zhuohan): Use deque instead of list for better performance.

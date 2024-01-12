@@ -80,7 +80,7 @@ class BlockSpaceManager:
         watermark: float = 0.01,
         sliding_window: Optional[int] = None,
         cpu_only: bool = False,
-        use_xpu: bool = True,
+        use_xpu: bool = False,
     ) -> None:
         self.block_size = block_size
         self.num_total_gpu_blocks = num_gpu_blocks

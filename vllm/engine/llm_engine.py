@@ -638,7 +638,7 @@ class LLMEngine:
         num_free_gpu_blocks = (
             self.scheduler.block_manager.get_num_free_gpu_blocks())
         num_used_gpu_blocks = total_num_gpu_blocks - num_free_gpu_blocks
-        gpu_cache_usage = num_used_gpu_blocks / total_num_gpu_blocks
+        gpu_cache_usage = num_used_gpu_blocks / total_num_gpu_blocks if total_num_gpu_blocks else 0
 
         total_num_cpu_blocks = self.cache_config.num_cpu_blocks
         if total_num_cpu_blocks > 0:
@@ -648,6 +648,12 @@ class LLMEngine:
             cpu_cache_usage = num_used_cpu_blocks / total_num_cpu_blocks
         else:
             cpu_cache_usage = 0.0
+
+        total_num_xpu_blocks = self.cache_config.num_xpu_blocks
+        num_free_xpu_blocks = (
+            self.scheduler.block_manager.get_num_free_xpu_blocks())
+        num_used_xpu_blocks = total_num_xpu_blocks - num_free_xpu_blocks
+        xpu_cache_usage = num_used_xpu_blocks / total_num_xpu_blocks if total_num_xpu_blocks else 0
 
         record_metrics(
             avg_prompt_throughput=avg_prompt_throughput,
@@ -667,6 +673,7 @@ class LLMEngine:
                     f"Swapped: {len(self.scheduler.swapped)} reqs, "
                     f"Pending: {len(self.scheduler.waiting)} reqs, "
                     f"GPU KV cache usage: {gpu_cache_usage * 100:.1f}%, "
+                    f"XPU KV cache usage: {xpu_cache_usage * 100:.1f}%, "
                     f"CPU KV cache usage: {cpu_cache_usage * 100:.1f}%")
         self.last_logging_time = now
 

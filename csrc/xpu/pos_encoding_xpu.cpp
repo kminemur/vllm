@@ -7,6 +7,7 @@
 #include "xpu_types.hpp"
 
 #include <torch/extension.h>
+#include "utils.h"
 
 template <typename scalar_t, typename scalar_sycl_t>
 void rotary_embedding_xpu_impl_(
@@ -31,7 +32,7 @@ void rotary_embedding_xpu_impl_(
       (scalar_sycl_t*)key, sycl::range<3>(num_tokens, num_kv_heads, head_size));
   sycl::buffer<scalar_sycl_t, 1> cos_sin_cache_buf(
       (scalar_sycl_t*)cos_sin_cache, sin_cos_dim * rot_dim);
-  sycl::queue q(sycl::gpu_selector_v);
+    sycl::queue& q = vllm::xpu::vllmGetQueue();
   q.submit([&](auto& h) {
     sycl::accessor positions_acc(positions_buf, h, sycl::read_only);
     sycl::accessor query_acc(query_buf, h, sycl::read_write);

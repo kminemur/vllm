@@ -8,7 +8,8 @@ import warnings
 from packaging.version import parse, Version
 import setuptools
 import torch
-
+import sys
+sys.path.append("./")
 BUILD_CPU_ONLY = os.getenv('VLLM_BUILD_CPU_ONLY', "0") == "1"
 BUILD_XPU_OPS = os.getenv('VLLM_BUILD_XPU_OPS', "0") == "1"
 if BUILD_XPU_OPS:

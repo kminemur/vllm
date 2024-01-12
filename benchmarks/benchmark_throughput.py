@@ -87,6 +87,7 @@ def run_vllm(
         enforce_eager=enforce_eager,
         device=device,
         swap_space=swap_space,
+        disable_log_stats=False
     )
 
     # Add the requests to the engine.
