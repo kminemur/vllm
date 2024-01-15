@@ -36,6 +36,10 @@ def _is_hip() -> bool:
 def _is_cuda() -> bool:
     return torch.version.cuda is not None and not BUILD_CPU_ONLY
 
+def _is_xpu() -> bool:
+    if BUILD_XPU_OPS: 
+        return True
+    return False
 
 # Compiler flags.
 CXX_FLAGS = ["-g", "-O2", "-std=c++17"]
@@ -359,7 +363,10 @@ def read_readme() -> str:
 
 def get_requirements() -> List[str]:
     """Get Python package dependencies from requirements.txt."""
-    if _is_hip():
+    if _is_xpu():
+        with open(get_path("requirements-xpu.txt")) as f:
+            requirements = f.read().strip().split("\n")
+    elif _is_hip():
         with open(get_path("requirements-rocm.txt")) as f:
             requirements = f.read().strip().split("\n")
     elif _is_cuda():
