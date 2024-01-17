@@ -39,7 +39,6 @@ struct paged_attention_xpu_v1_impl_ {
       const int num_blocks) {
     constexpr int x = 16 / sizeof(scalar_t);
     const int num_queries_per_kv = num_heads / num_kv_heads;
-
     int max_context_len = max_num_blocks_per_seq * BLOCK_SIZE;
     int max_context_len_padded = (max_context_len + 15) & 0xFFFFFFF0;
     TORCH_CHECK((max_context_len_padded * sizeof(float)) % 64 == 0);
@@ -48,7 +47,7 @@ struct paged_attention_xpu_v1_impl_ {
     sycl::buffer<scalar_sycl_t, 1> out_buf(
         (scalar_sycl_t*)out, num_seqs * num_heads * HEAD_SIZE);
     sycl::buffer<scalar_sycl_t, 1> q_buf(
-        (scalar_sycl_t*)q, num_seqs * num_heads * HEAD_SIZE);
+        (scalar_sycl_t*)q, num_seqs * q_stride);
     sycl::buffer<int, 1> context_lens_buf(context_lens, num_seqs);
     sycl::buffer<int, 1> block_tables_buf(
         block_tables, num_seqs * max_num_blocks_per_seq);
@@ -57,52 +56,49 @@ struct paged_attention_xpu_v1_impl_ {
     sycl::buffer<scalar_sycl_t, 1> v_cache_buf(
         (scalar_sycl_t*)v_cache, num_blocks * kv_block_stride);
 
-    auto e0 = task_q.memset(out, 0, num_seqs * num_heads * HEAD_SIZE * sizeof(scalar_t));
-
+    auto e0 = task_q.memset(
+        out, 0, num_seqs * num_heads * HEAD_SIZE * sizeof(scalar_t));
 
     size_t logits_stride = num_heads * max_context_len_padded;
     size_t logits_bytes = num_seqs * logits_stride * sizeof(float);
     float* logits = (float*)sycl::aligned_alloc_device(
         64, logits_bytes, task_q.get_device(), task_q.get_context());
     sycl::event reset_logits = task_q.memset(logits, 0, logits_bytes);
-
+    reset_logits.wait();
     auto e1 = task_q.submit([&](auto& h) {
       sycl::accessor q_acc(q_buf, h, sycl::read_only);
       sycl::accessor k_cache_acc(k_cache_buf, h, sycl::read_only);
       sycl::accessor context_lens_acc(context_lens_buf, h, sycl::read_only);
       sycl::accessor block_tables_acc(block_tables_buf, h, sycl::read_only);
-      h.parallel_for(
-          sycl::range(num_seqs, num_heads, HEAD_SIZE / x),
-          [=](sycl::item<3> item) {
-            size_t seq_idx = item[0];
-            size_t head_idx = item[1];
-            size_t x_idx = item[2];
-            int context_len = context_lens_acc[seq_idx];
-            const int block_num = (context_len + BLOCK_SIZE - 1) / BLOCK_SIZE;
+      h.parallel_for(sycl::range(num_seqs, num_heads), [=](sycl::item<2> item) {
+        size_t seq_idx = item[0];
+        size_t head_idx = item[1];
+        int context_len = context_lens_acc[seq_idx];
+        const int block_num = (context_len + BLOCK_SIZE - 1) / BLOCK_SIZE;
 
-            const int64_t kv_head_idx = head_idx / num_queries_per_kv;
-            size_t q_base_offset = seq_idx * q_stride + head_idx * HEAD_SIZE;
-
-            for (size_t block_idx = 0; block_idx < block_num; ++block_idx) {
-              const int32_t physical_block_idx = block_tables_acc
-                  [block_idx + max_num_blocks_per_seq * seq_idx];
-              size_t k_base_offset = physical_block_idx * kv_block_stride +
-                  kv_head_idx * kv_head_stride; // dim0,dim1
-              float* __restrict__ head_block_logits = logits +
-                  seq_idx * logits_stride + head_idx * max_context_len_padded +
-                  block_idx * BLOCK_SIZE;
-              for (int token_idx = 0; token_idx < BLOCK_SIZE; ++token_idx) {
-                for (int i = 0; i < x; ++i) {
-                  head_block_logits[token_idx] +=
-                      (float)q_acc[i + x_idx * x + q_base_offset] *
-                      (float)k_cache_acc
-                          [i + token_idx * x + BLOCK_SIZE * x_idx * x +
-                           k_base_offset] *
-                      scale;
-                }
+        for (size_t block_idx = 0; block_idx < block_num; ++block_idx) {
+          const int32_t physical_block_idx =
+              block_tables_acc[block_idx + max_num_blocks_per_seq * seq_idx];
+          const int64_t kv_head_idx = head_idx / num_queries_per_kv;
+          size_t q_base_offset = seq_idx * q_stride + head_idx * HEAD_SIZE;
+          size_t k_base_offset = physical_block_idx * kv_block_stride +
+              kv_head_idx * kv_head_stride; // dim0,dim1
+          float* __restrict__ head_block_logits = logits +
+              seq_idx * logits_stride + head_idx * max_context_len_padded +
+              block_idx * BLOCK_SIZE;
+          for (int x_idx = 0; x_idx < HEAD_SIZE / x; ++x_idx) {
+            for (int token_idx = 0; token_idx < BLOCK_SIZE; ++token_idx) {
+              for (int i = 0; i < x; ++i) {
+                head_block_logits
+                    [token_idx] += (float)q_acc[i + x_idx * x + q_base_offset] *
+                    (float)k_cache_acc[i + token_idx * x +
+                                       BLOCK_SIZE * x_idx * x + k_base_offset] *
+                    scale;
               }
             }
-          });
+          }
+        }
+      });
     });
     e1.wait();
 
@@ -120,13 +116,15 @@ struct paged_attention_xpu_v1_impl_ {
           max_logit =
               max_logit >= head_logit_ptr[i] ? max_logit : head_logit_ptr[i];
         }
-        float sum = 0;
+        float sum = 0.f;
         for (int i = 0; i < context_len; ++i) {
-          head_logit_ptr[i] = sycl::exp(head_logit_ptr[i] - max_logit);
-          sum += head_logit_ptr[i];
+          float val = sycl::exp<float>(head_logit_ptr[i] - max_logit);
+          head_logit_ptr[i] = val;
+          sum += val;
         }
+        const float inv_sum = 1.f / (sum + 1e-6f);
         for (int i = 0; i < context_len; ++i) {
-          head_logit_ptr[i] /= sum;
+          head_logit_ptr[i] *= inv_sum;
         }
         int remaining_seq_upper = block_num * BLOCK_SIZE;
         for (int i = context_len; i < remaining_seq_upper; ++i) {
@@ -164,8 +162,8 @@ struct paged_attention_xpu_v1_impl_ {
                   BLOCK_SIZE * head_part_idx * 16;
               size_t out_base_offset = seq_idx * num_heads * HEAD_SIZE +
                   head_idx * HEAD_SIZE + head_part_idx * 16;
-              for (int j = 0; j < BLOCK_SIZE; ++j) {
-                for (int i = 0; i < 16; ++i) {
+              for (int i = 0; i < 16; ++i) {
+                for (int j = 0; j < BLOCK_SIZE; ++j) {
                   output_acc[i + out_base_offset] +=
                       (scalar_sycl_t)(prob_vec_ptr[j] * (float)v_cache_acc[j + i * BLOCK_SIZE + v_base_offset]);
                 }

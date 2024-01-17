@@ -81,6 +81,8 @@ class PagedAttention(nn.Module):
         Returns:
             shape = [batch_size, seq_len, num_heads * head_size]
         """
+        if query.is_xpu:
+            torch.xpu.synchronize()
         batch_size, seq_len, hidden_size = query.shape
         # Reshape the query, key, and value tensors.
         query = query.view(-1, self.num_heads, self.head_size)

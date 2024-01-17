@@ -113,13 +113,16 @@ class Worker:
             total_xpu_memory = get_xpu_memory()
             cache_block_size = CacheEngine.get_cache_block_size(
                 block_size, self.model_config, self.parallel_config)
+            print("peak memory: " + str(peak_memory) + " total memory: " + str(total_xpu_memory) +
+                  "cache block size: " + str(cache_block_size))
+            
             num_xpu_blocks = int(
                 (total_xpu_memory * gpu_memory_utilization - peak_memory) //
                 cache_block_size)
             num_cpu_blocks = int(cpu_swap_space // cache_block_size)
             num_xpu_blocks = max(num_xpu_blocks, 0)
             num_cpu_blocks = max(num_cpu_blocks, 0)
-            torch.cuda.empty_cache()
+            torch.xpu.empty_cache()
             
             return 0, num_cpu_blocks, num_xpu_blocks
             

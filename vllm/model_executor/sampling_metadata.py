@@ -146,7 +146,7 @@ class SamplingTensors:
                    dtype: torch.dtype) -> "SamplingTensors":
         # Note that the performance will be very bad without
         # pinned memory.
-        if device == torch.device('xpu:0'):  # FIXME: remove index?
+        if device.type == 'xpu':  # FIXME: remove index?
             pin_memory = False
         else:
             pin_memory = not in_wsl()
@@ -215,19 +215,21 @@ class SamplingTensors:
             dtype=torch.long,
             pin_memory=pin_memory,
         )
+        if device.type == 'xpu': 
+            torch.xpu.synchronize()
         # Because the memory is pinned, we can do non-blocking
         # transfer to device.
         return cls(
-            temperatures=temperatures_t.to(device=device, non_blocking=True),
-            top_ps=top_ps_t.to(device=device, non_blocking=True),
-            top_ks=top_ks_t.to(device=device, non_blocking=True),
-            min_ps=min_ps_t.to(device=device, non_blocking=True),
+            temperatures=temperatures_t.to(device=device, non_blocking=pin_memory),
+            top_ps=top_ps_t.to(device=device, non_blocking=pin_memory),
+            top_ks=top_ks_t.to(device=device, non_blocking=pin_memory),
+            min_ps=min_ps_t.to(device=device, non_blocking=pin_memory),
             presence_penalties=presence_penalties_t.to(device=device,
-                                                       non_blocking=True),
+                                                       non_blocking=pin_memory),
             frequency_penalties=frequency_penalties_t.to(device=device,
-                                                         non_blocking=True),
+                                                         non_blocking=pin_memory),
             repetition_penalties=repetition_penalties_t.to(device=device,
-                                                           non_blocking=True),
-            prompt_tokens=prompt_tensor.to(device=device, non_blocking=True),
-            output_tokens=output_tensor.to(device=device, non_blocking=True),
+                                                           non_blocking=pin_memory),
+            prompt_tokens=prompt_tensor.to(device=device, non_blocking=pin_memory),
+            output_tokens=output_tensor.to(device=device, non_blocking=pin_memory),
         )
