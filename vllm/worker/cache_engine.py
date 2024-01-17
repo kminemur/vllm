@@ -104,12 +104,12 @@ class CacheEngine:
         value_block_shape = self.get_value_block_shape()
         for _ in range(self.num_layers):
             key_blocks = torch.empty(
-                size=(self.num_gpu_blocks, *key_block_shape),
+                size=(self.num_xpu_blocks, *key_block_shape),
                 dtype=self.dtype,
                 device="xpu",
             )
             value_blocks = torch.empty(
-                size=(self.num_gpu_blocks, *value_block_shape),
+                size=(self.num_xpu_blocks, *value_block_shape),
                 dtype=self.dtype,
                 device="xpu",
             )
@@ -147,6 +147,7 @@ class CacheEngine:
         dst: List[KVCache],
         src_to_dst: Dict[int, int],
     ) -> None:
+        print("swapping cache")
         with torch.cuda.stream(self.cache_stream):
             for i in range(self.num_layers):
                 src_key_cache, src_value_cache = src[i]
@@ -166,6 +167,7 @@ class CacheEngine:
         self._swap(self.gpu_cache, self.cpu_cache, src_to_dst)
 
     def copy(self, src_to_dsts: Dict[int, List[int]]) -> None:
+        print("copy cache")
         key_caches = [key_cache for key_cache, _ in self.xpu_cache]
         value_caches = [value_cache for _, value_cache in self.xpu_cache]
         # NOTE(woosuk): This operation implicitly synchronizes the CPU and GPU.
