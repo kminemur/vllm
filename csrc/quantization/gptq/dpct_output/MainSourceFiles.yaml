@@ -1,0 +1,2305 @@
+---
+MainSourceFile:  MainSrcFiles_placehold
+Replacements:
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          243
+    Length:          26
+    ReplacementText: "#include <sycl/sycl.hpp>\n#include <dpct/dpct.hpp>\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          269
+    Length:          23
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          293
+    Length:          21
+    ReplacementText: '#include "compat.dp.hpp"'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          315
+    Length:          26
+    ReplacementText: '#include "matrix_view.dp.hpp"'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          342
+    Length:          20
+    ReplacementText: '#include "qdq_4.dp.hpp"'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          2554
+    Length:          15
+    ReplacementText: __dpct_inline__
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          2570
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          2581
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          2595
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          2616
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          2635
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          2657
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          2686
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          2709
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          2783
+    Length:          33
+    ReplacementText: 'sycl::fma(dq[i], *a2_ptr++, result)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          2829
+    Length:          25
+    ReplacementText: 'result + g_result'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          2859
+    Length:          15
+    ReplacementText: __dpct_inline__
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          2875
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          2902
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          2923
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          2942
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          2971
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          2994
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          3068
+    Length:          33
+    ReplacementText: 'sycl::fma(dq[i], *a2_ptr++, result)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          3114
+    Length:          32
+    ReplacementText: 'sycl::vec<sycl::half, 1>{result[1]}.convert<float, sycl::rounding_mode::automatic>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          3149
+    Length:          33
+    ReplacementText: 'sycl::vec<sycl::half, 1>{result[0]}.convert<float, sycl::rounding_mode::automatic>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          3247
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          3306
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          3317
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          3444
+    Length:          11
+    ReplacementText: "/*\nDPCT1110:0: The total declared local variable size in device function gemm_half_q_half_gptq_kernel exceeds 128 bytes and may cause high register pressure. Consult with your hardware vendor to find the total register size available and adjust the code, or use smaller sub-group size to avoid high register pressure.\n*/\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          3501
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          3626
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          3664
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          3811
+    Length:          0
+    ReplacementText: ",\n    const sycl::nd_item<3> &item_ct1,\n    sycl::local_accessor<sycl::half, 2> block_a"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          4053
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          4099
+    Length:          10
+    ReplacementText: 'item_ct1.get_group(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          4150
+    Length:          10
+    ReplacementText: 'item_ct1.get_group(1)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          4191
+    Length:          10
+    ReplacementText: 'item_ct1.get_group(0)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          4236
+    Length:          41
+    ReplacementText: 'sycl::min(offset_n + BLOCK_KN_SIZE * 4, size_n)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          4295
+    Length:          31
+    ReplacementText: 'sycl::min(offset_m + m_count, size_m)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          4344
+    Length:          37
+    ReplacementText: 'sycl::min(offset_k + BLOCK_KN_SIZE, size_k)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          4442
+    Length:          48
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          4598
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          4654
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          4699
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          4920
+    Length:          10
+    ReplacementText: 'item_ct1.get_group(0)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          5056
+    Length:          15
+    ReplacementText: 'item_ct1.barrier(sycl::access::fence_space::local_space)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          5340
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          5469
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          5492
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          6582
+    Length:          4
+    ReplacementText: 'sycl::int4'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          6598
+    Length:          4
+    ReplacementText: 'sycl::int4'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          6624
+    Length:          4
+    ReplacementText: 'sycl::int4'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          6663
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          6711
+    Length:          11
+    ReplacementText: 'load_int4.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          6799
+    Length:          11
+    ReplacementText: 'load_int4.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          6887
+    Length:          11
+    ReplacementText: 'load_int4.z()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          6975
+    Length:          11
+    ReplacementText: 'load_int4.w()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          7686
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          7700
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          7746
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          7851
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          7948
+    Length:          0
+    ReplacementText: "        /*\n        DPCT1007:10: Migration of half version of atomicAdd is not supported.\n        */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          7986
+    Length:          0
+    ReplacementText: "        /*\n        DPCT1007:11: Migration of half version of atomicAdd is not supported.\n        */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          9076
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          9162
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          9212
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          9309
+    Length:          4
+    ReplacementText: 'sycl::range<3>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          9322
+    Length:          0
+    ReplacementText: '(1, 1, 1)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          9331
+    Length:          0
+    ReplacementText: '(1, 1, 1)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          9337
+    Length:          10
+    ReplacementText: 'blockDim[2]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          9369
+    Length:          10
+    ReplacementText: 'blockDim[1]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          9389
+    Length:          10
+    ReplacementText: 'blockDim[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          9409
+    Length:          9
+    ReplacementText: 'gridDim[2]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          9460
+    Length:          9
+    ReplacementText: 'gridDim[1]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          9501
+    Length:          9
+    ReplacementText: 'gridDim[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          9641
+    Length:          0
+    ReplacementText: "    /*\n    DPCT1049:1: The work-group size passed to the SYCL kernel may exceed the limit. To get the device limit, query info::device::max_work_group_size. Adjust the work-group size if needed.\n    */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          9645
+    Length:          210
+    ReplacementText: "dpct::get_in_order_queue().parallel_for(\n      sycl::nd_range<3>(gridDim * blockDim, blockDim), \n      [=](sycl::nd_item<3> item_ct1) {\n        (a, b_q_weight, b_gptq_qzeros, b_gptq_scales, c, size_m, size_n, size_k, groups, b_q_perm);\n      });"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          9855
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          9861
+    Length:          11
+    ReplacementText: "/*\nDPCT1110:2: The total declared local variable size in device function reconstruct_exllama_kernel exceeds 128 bytes and may cause high register pressure. Consult with your hardware vendor to find the total register size available and adjust the code, or use smaller sub-group size to avoid high register pressure.\n*/\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          10047
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          10151
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          10172
+    Length:          0
+    ReplacementText: ",\n    const sycl::nd_item<3> &item_ct1,\n    int *perm"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          10394
+    Length:          10
+    ReplacementText: 'item_ct1.get_group(1)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          10441
+    Length:          10
+    ReplacementText: 'item_ct1.get_group(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          10474
+    Length:          37
+    ReplacementText: 'sycl::min(offset_k + BLOCK_KN_SIZE, size_k)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          10549
+    Length:          35
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          10597
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          11100
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          11121
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          11144
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          11514
+    Length:          15
+    ReplacementText: 'item_ct1.barrier(sycl::access::fence_space::local_space)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          12157
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          12191
+    Length:          4
+    ReplacementText: 'sycl::int4'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          12207
+    Length:          4
+    ReplacementText: 'sycl::int4'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          12233
+    Length:          4
+    ReplacementText: 'sycl::int4'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          12292
+    Length:          11
+    ReplacementText: 'load_int4.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          12380
+    Length:          11
+    ReplacementText: 'load_int4.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          12468
+    Length:          11
+    ReplacementText: 'load_int4.z()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          12556
+    Length:          11
+    ReplacementText: 'load_int4.w()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          12840
+    Length:          28
+    ReplacementText: 'scales[v] * dq[v][j]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          12913
+    Length:          20
+    ReplacementText: 'dq[0][j][1]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          12935
+    Length:          20
+    ReplacementText: 'dq[1][j][1]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          12957
+    Length:          20
+    ReplacementText: 'dq[2][j][1]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          12979
+    Length:          20
+    ReplacementText: 'dq[3][j][1]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          13045
+    Length:          21
+    ReplacementText: 'dq[0][j][0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          13068
+    Length:          21
+    ReplacementText: 'dq[1][j][0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          13091
+    Length:          21
+    ReplacementText: 'dq[2][j][0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          13114
+    Length:          21
+    ReplacementText: 'dq[3][j][0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          13322
+    Length:          28
+    ReplacementText: 'scales[v] * dq[v][j]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          13400
+    Length:          20
+    ReplacementText: 'dq[0][j][1]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          13422
+    Length:          20
+    ReplacementText: 'dq[1][j][1]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          13444
+    Length:          20
+    ReplacementText: 'dq[2][j][1]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          13466
+    Length:          20
+    ReplacementText: 'dq[3][j][1]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          13537
+    Length:          21
+    ReplacementText: 'dq[0][j][0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          13560
+    Length:          21
+    ReplacementText: 'dq[1][j][0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          13583
+    Length:          21
+    ReplacementText: 'dq[2][j][0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          13606
+    Length:          21
+    ReplacementText: 'dq[3][j][0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          13803
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          13853
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          13918
+    Length:          4
+    ReplacementText: 'sycl::range<3>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          13931
+    Length:          0
+    ReplacementText: '(1, 1, 1)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          13940
+    Length:          0
+    ReplacementText: '(1, 1, 1)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          13946
+    Length:          10
+    ReplacementText: 'blockDim[2]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          13978
+    Length:          10
+    ReplacementText: 'blockDim[1]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          13998
+    Length:          9
+    ReplacementText: 'gridDim[1]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          14045
+    Length:          9
+    ReplacementText: 'gridDim[2]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          14088
+    Length:          0
+    ReplacementText: "    /*\n    DPCT1049:3: The work-group size passed to the SYCL kernel may exceed the limit. To get the device limit, query info::device::max_work_group_size. Adjust the work-group size if needed.\n    */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          14092
+    Length:          204
+    ReplacementText: "{\n      dpct::has_capability_or_fail(dpct::get_in_order_queue().get_device(), {sycl::aspect::fp16});\n      dpct::get_in_order_queue().submit(\n        [&](sycl::handler &cgh) {\n          /*\n          DPCT1101:13: 'BLOCK_KN_SIZE' expression was replaced with a value. Modify the code to use the original expression, provided in comments, if it is correct.\n          */\n          sycl::local_accessor<int, 1> perm_acc_ct1(sycl::range<1>(128/*BLOCK_KN_SIZE*/), cgh);\n\n          cgh.parallel_for(\n            sycl::nd_range<3>(gridDim * blockDim, blockDim), \n            [=](sycl::nd_item<3> item_ct1) {\n              reconstruct_exllama_kernel(b_q_weight, b_q_perm, b_gptq_qzeros, b_gptq_scales, height, width, groups, out, item_ct1, perm_acc_ct1.get_pointer());\n            });\n        });\n    }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          14296
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          14302
+    Length:          11
+    ReplacementText: "/*\nDPCT1110:4: The total declared local variable size in device function gemm_half_q_half_alt_kernel exceeds 128 bytes and may cause high register pressure. Consult with your hardware vendor to find the total register size available and adjust the code, or use smaller sub-group size to avoid high register pressure.\n*/\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          14357
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          14424
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          14458
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          14605
+    Length:          0
+    ReplacementText: ",\n    const sycl::nd_item<3> &item_ct1,\n    sycl::local_accessor<sycl::half2, 2> blockvec,\n    sycl::local_accessor<sycl::half2, 2> deq2"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          14733
+    Length:          10
+    ReplacementText: 'item_ct1.get_group(1)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          14780
+    Length:          32
+    ReplacementText: 'sycl::min(BLOCK_M_SIZE_MAX, batch - b)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          14842
+    Length:          10
+    ReplacementText: 'item_ct1.get_group(0)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          14874
+    Length:          34
+    ReplacementText: 'sycl::min(BLOCK_KN_SIZE / 8, height - h)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          14942
+    Length:          10
+    ReplacementText: 'item_ct1.get_group(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          14955
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          14973
+    Length:          57
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          15039
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          15126
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          15182
+    Length:          10
+    ReplacementText: 'item_ct1.get_group(0)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          15233
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          15268
+    Length:          30
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          15313
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          15344
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          15436
+    Length:          87
+    ReplacementText: 'sycl::half2{sycl::vec<int, 1>{(val & 0xF)}.convert<sycl::half, sycl::rounding_mode::rte>()[0],sycl::vec<int, 1>{(val >> 4)}.convert<sycl::half, sycl::rounding_mode::rte>()[0]}'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          15540
+    Length:          10
+    ReplacementText: 'item_ct1.get_group(0)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          15642
+    Length:          16
+    ReplacementText: 'sycl::vec<int, 1>{0}.convert<sycl::half, sycl::rounding_mode::rte>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          15670
+    Length:          15
+    ReplacementText: "/*\n    DPCT1065:12: Consider replacing sycl::nd_item::barrier() with sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better performance if there is no access to global memory.\n    */\n    item_ct1.barrier()"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          15805
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          15821
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          15931
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          15960
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          16147
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          16197
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          16249
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          16263
+    Length:          33
+    ReplacementText: 'sycl::half2{scale_f,scale_f2}'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          16310
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          16323
+    Length:          232
+    ReplacementText: 'sycl::half2{scale_f * sycl::vec<int, 1>{(-((zeros[g * zero_width + z_w] >> z_mod) & 0xF) - 1)}.convert<sycl::half, sycl::rounding_mode::rte>()[0],scale_f2 * sycl::vec<int, 1>{(-((zeros[g2 * zero_width + z_w] >> z_mod) & 0xF) - 1)}.convert<sycl::half, sycl::rounding_mode::rte>()[0]}'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          16869
+    Length:          102
+    ReplacementText: 'sycl::fma(sycl::fma(deq2[(tmp >>  0) & 0xff][off], scales_tmp[0], zeros_tmp[0]), blockvec[m][k + 0], res2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          16992
+    Length:          102
+    ReplacementText: 'sycl::fma(sycl::fma(deq2[(tmp >>  8) & 0xff][off], scales_tmp[1], zeros_tmp[1]), blockvec[m][k + 1], res2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          17115
+    Length:          102
+    ReplacementText: 'sycl::fma(sycl::fma(deq2[(tmp >> 16) & 0xff][off], scales_tmp[2], zeros_tmp[2]), blockvec[m][k + 2], res2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          17238
+    Length:          102
+    ReplacementText: 'sycl::fma(sycl::fma(deq2[(tmp >> 24) & 0xff][off], scales_tmp[3], zeros_tmp[3]), blockvec[m][k + 3], res2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          17380
+    Length:          38
+    ReplacementText: 'res[m] + res2.x() + res2.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          17722
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          17808
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          17857
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          17921
+    Length:          4
+    ReplacementText: 'sycl::range<3>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          17934
+    Length:          0
+    ReplacementText: '(1, 1, 1)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          17943
+    Length:          0
+    ReplacementText: '(1, 1, 1)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          17949
+    Length:          10
+    ReplacementText: 'blockDim[2]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          17981
+    Length:          10
+    ReplacementText: 'blockDim[1]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          18001
+    Length:          10
+    ReplacementText: 'blockDim[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          18021
+    Length:          9
+    ReplacementText: 'gridDim[2]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          18068
+    Length:          9
+    ReplacementText: 'gridDim[1]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          18118
+    Length:          9
+    ReplacementText: 'gridDim[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          18162
+    Length:          0
+    ReplacementText: "    /*\n    DPCT1049:5: The work-group size passed to the SYCL kernel may exceed the limit. To get the device limit, query info::device::max_work_group_size. Adjust the work-group size if needed.\n    */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          18166
+    Length:          233
+    ReplacementText: "{\n      dpct::has_capability_or_fail(dpct::get_in_order_queue().get_device(), {sycl::aspect::fp16});\n      dpct::get_in_order_queue().submit(\n        [&](sycl::handler &cgh) {\n          /*\n          DPCT1101:14: 'BLOCK_M_SIZE_MAX' expression was replaced with a value. Modify the code to use the original expression, provided in comments, if it is correct.\n          */\n          /*\n          DPCT1101:15: 'blockwidth2' expression was replaced with a value. Modify the code to use the original expression, provided in comments, if it is correct.\n          */\n          sycl::local_accessor<sycl::half2, 2> blockvec_acc_ct1(sycl::range<2>(8/*BLOCK_M_SIZE_MAX*/, 64/*blockwidth2*/), cgh);\n          sycl::local_accessor<sycl::half2, 2> deq2_acc_ct1(sycl::range<2>(256, 8), cgh);\n\n          cgh.parallel_for(\n            sycl::nd_range<3>(gridDim * blockDim, blockDim), \n            [=](sycl::nd_item<3> item_ct1) {\n              gemm_half_q_half_alt_kernel((const sycl::half2*) a, b_q_weight, c, b_gptq_scales, b_gptq_qzeros, b_g_idx, size_m, size_k / 8, size_n, item_ct1, blockvec_acc_ct1, deq2_acc_ct1);\n            });\n        });\n    }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          18399
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          18405
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          18493
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          18667
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          18690
+    Length:          0
+    ReplacementText: ",\n    const sycl::nd_item<3> &item_ct1"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          18750
+    Length:          10
+    ReplacementText: 'item_ct1.get_group(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          18763
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          18790
+    Length:          10
+    ReplacementText: 'item_ct1.get_group(1)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          19118
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          19272
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          19386
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          19400
+    Length:          68
+    ReplacementText: 'sycl::vec<int, 1>{((int)((w_read >> s) & 0x0f) - w_zero)}.convert<sycl::half, sycl::rounding_mode::rte>()[0] * w_scale'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          19631
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          19680
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          19745
+    Length:          4
+    ReplacementText: 'sycl::range<3>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          19758
+    Length:          0
+    ReplacementText: '(1, 1, 1)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          19767
+    Length:          0
+    ReplacementText: '(1, 1, 1)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          19773
+    Length:          10
+    ReplacementText: 'blockDim[2]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          19805
+    Length:          10
+    ReplacementText: 'blockDim[1]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          19825
+    Length:          9
+    ReplacementText: 'gridDim[1]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          19860
+    Length:          9
+    ReplacementText: 'gridDim[2]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          19902
+    Length:          0
+    ReplacementText: "    /*\n    DPCT1049:6: The work-group size passed to the SYCL kernel may exceed the limit. To get the device limit, query info::device::max_work_group_size. Adjust the work-group size if needed.\n    */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          19906
+    Length:          200
+    ReplacementText: "{\n      dpct::has_capability_or_fail(dpct::get_in_order_queue().get_device(), {sycl::aspect::fp16});\n      dpct::get_in_order_queue().parallel_for(\n        sycl::nd_range<3>(gridDim * blockDim, blockDim), \n        [=](sycl::nd_item<3> item_ct1) {\n          reconstruct_gptq_kernel(b_q_weight, b_gptq_scales, b_gptq_qzeros, b_g_idx, height, width, groups, out, item_ct1);\n        });\n    }"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          20106
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          20185
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          20271
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          20320
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          20333
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          20963
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          20976
+    Length:          18
+    ReplacementText: 'sycl::vec<float, 1>{1.0f}.convert<sycl::half, sycl::rounding_mode::automatic>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          21010
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          21022
+    Length:          18
+    ReplacementText: 'sycl::vec<float, 1>{0.0f}.convert<sycl::half, sycl::rounding_mode::automatic>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          22364
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          22479
+    Length:          0
+    ReplacementText: ",\n    const sycl::nd_item<3> &item_ct1"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          22495
+    Length:          10
+    ReplacementText: 'item_ct1.get_group(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          22520
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          22708
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          22901
+    Length:          0
+    ReplacementText: ",\n    const sycl::nd_item<3> &item_ct1"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          23053
+    Length:          10
+    ReplacementText: 'item_ct1.get_group(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          23066
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          23140
+    Length:          10
+    ReplacementText: 'item_ct1.get_group(1)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          23826
+    Length:          0
+    ReplacementText: "\n    dpct::device_ext &dev_ct1 = dpct::get_current_device();\n    sycl::queue &q_ct1 = dev_ct1.in_order_queue();"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          23969
+    Length:          4
+    ReplacementText: 'sycl::range<3>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          23982
+    Length:          0
+    ReplacementText: '(1, 1, 1)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          23991
+    Length:          0
+    ReplacementText: '(1, 1, 1)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          24001
+    Length:          10
+    ReplacementText: 'blockDim[2]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          24033
+    Length:          10
+    ReplacementText: 'blockDim[1]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          24057
+    Length:          9
+    ReplacementText: 'gridDim[2]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          24103
+    Length:          9
+    ReplacementText: 'gridDim[1]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          24128
+    Length:          0
+    ReplacementText: "        /*\n        DPCT1049:8: The work-group size passed to the SYCL kernel may exceed the limit. To get the device limit, query info::device::max_work_group_size. Adjust the work-group size if needed.\n        */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          24136
+    Length:          174
+    ReplacementText: "q_ct1.parallel_for(\n          sycl::nd_range<3>(gridDim * blockDim, blockDim), \n          [=](sycl::nd_item<3> item_ct1) {\n            make_sequential_kernel(q_weight, new_qweight, q_perm, height / 8, width, item_ct1);\n          });"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          24310
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          24348
+    Length:          15
+    ReplacementText: q_ct1.memcpy
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          24424
+    Length:          26
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          24480
+    Length:          23
+    ReplacementText: 'dev_ct1.queues_wait_and_throw()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          24513
+    Length:          21
+    ReplacementText: 'sycl::free(new_qweight, q_ct1)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          24546
+    Length:          4
+    ReplacementText: 'sycl::range<3>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          24559
+    Length:          0
+    ReplacementText: '(1, 1, 1)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          24568
+    Length:          0
+    ReplacementText: '(1, 1, 1)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          24574
+    Length:          10
+    ReplacementText: 'blockDim[2]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          24602
+    Length:          10
+    ReplacementText: 'blockDim[1]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          24622
+    Length:          9
+    ReplacementText: 'gridDim[2]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          24664
+    Length:          9
+    ReplacementText: 'gridDim[1]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          24679
+    Length:          0
+    ReplacementText: "    /*\n    DPCT1049:7: The work-group size passed to the SYCL kernel may exceed the limit. To get the device limit, query info::device::max_work_group_size. Adjust the work-group size if needed.\n    */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          24683
+    Length:          62
+    ReplacementText: "q_ct1.parallel_for(\n      sycl::nd_range<3>(gridDim * blockDim, blockDim), \n      [=](sycl::nd_item<3> item_ct1) {\n        shuffle_kernel(q_weight, height, width, item_ct1);\n      });"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Offset:          24745
+    Length:          1
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+MainSourceFilesDigest:
+  - MainSourceFile:  '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/q_gemm.cu'
+    Digest:          da057e5206282a2fe0d3dc5d8709850a
+DpctVersion:     2024.0.0
+MainHelperFileName: ''
+USMLevel:        ''
+FeatureMap:      {}
+CompileTargets:  {}
+OptionMap:
+  AnalysisScopePath:
+    Value:           '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq'
+    Specified:       false
+  AsyncHandler:
+    Value:           'false'
+    Specified:       false
+  CommentsEnabled:
+    Value:           'false'
+    Specified:       false
+  CompilationsDir:
+    Value:           ''
+    Specified:       false
+  CtadEnabled:
+    Value:           'false'
+    Specified:       false
+  EnablepProfiling:
+    Value:           'false'
+    Specified:       false
+  ExperimentalFlag:
+    Value:           '0'
+    Specified:       false
+  ExplicitClNamespace:
+    Value:           'false'
+    Specified:       false
+  ExplicitNamespace:
+    Value:           '20'
+    Specified:       false
+  ExtensionDDFlag:
+    Value:           '0'
+    Specified:       false
+  ExtensionDEFlag:
+    Value:           '4294967295'
+    Specified:       false
+  HelperFuncPreferenceFlag:
+    Value:           '0'
+    Specified:       false
+  NDRangeDim:
+    Value:           '3'
+    Specified:       false
+  NoDRYPattern:
+    Value:           'false'
+    Specified:       false
+  NoUseGenericSpace:
+    Value:           ''
+    Specified:       true
+  OptimizeMigration:
+    Value:           'false'
+    Specified:       false
+  ProcessAll:
+    Value:           'false'
+    Specified:       false
+  RuleFile:
+    Value:           ''
+    Specified:       false
+  SyclNamedLambda:
+    Value:           'false'
+    Specified:       false
+  UsmLevel:
+    Value:           '1'
+    Specified:       false
+...

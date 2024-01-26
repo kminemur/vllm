@@ -1,0 +1,667 @@
+---
+MainSourceFile:  '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/dpct_output/qdq_4.dp.hpp'
+Replacements:
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          97
+    Length:          23
+    ReplacementText: "#include <sycl/sycl.hpp>\n#include <dpct/dpct.hpp>\n#include \"qdq_util.dp.hpp\""
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          216
+    Length:          15
+    ReplacementText: __dpct_inline__
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          232
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          590
+    Length:          15
+    ReplacementText: __dpct_inline__
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          606
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          667
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          748
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          760
+    Length:          29
+    ReplacementText: 'sycl::vec<float, 1>{(1.0f / 16.0f)}.convert<sycl::half, sycl::rounding_mode::rte>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          801
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          813
+    Length:          26
+    ReplacementText: 'sycl::half2{y16_,y16_}'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          851
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          863
+    Length:          40
+    ReplacementText: 'sycl::vec<float, 1>{(-1024.0f         - 8.0f)}.convert<sycl::half, sycl::rounding_mode::rte>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          915
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          927
+    Length:          40
+    ReplacementText: 'sycl::vec<float, 1>{(-1024.0f / 16.0f - 8.0f)}.convert<sycl::half, sycl::rounding_mode::rte>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          979
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          991
+    Length:          25
+    ReplacementText: 'sycl::half2{z1_,z1_}'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          1028
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          1040
+    Length:          26
+    ReplacementText: 'sycl::half2{z16_,z16_}'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          1439
+    Length:          24
+    ReplacementText: 'q0.as_half2 + z1'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          1477
+    Length:          30
+    ReplacementText: 'sycl::fma(q1.as_half2, y16, z16)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          1521
+    Length:          24
+    ReplacementText: 'q2.as_half2 + z1'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          1559
+    Length:          30
+    ReplacementText: 'sycl::fma(q3.as_half2, y16, z16)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          1594
+    Length:          15
+    ReplacementText: __dpct_inline__
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          1610
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          1694
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          1710
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          1733
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          1820
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          1831
+    Length:          47
+    ReplacementText: 'sycl::vec<int, 1>{(-64)}.convert<sycl::half, sycl::rounding_mode::rte>()[0] - sycl::vec<int, 1>{zero}.convert<sycl::half, sycl::rounding_mode::rte>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          1885
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          1900
+    Length:          19
+    ReplacementText: 'sycl::half2{scale,scale}'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          1937
+    Length:          41
+    ReplacementText: 'scale2 * sycl::half2{z1.as_half,z1.as_half}'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          1995
+    Length:          34
+    ReplacementText: 'scale2 * sycl::half2{z16,z16}'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          2042
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          2052
+    Length:          21
+    ReplacementText: 'sycl::vec<float, 1>{1.0f}.convert<sycl::half, sycl::rounding_mode::rte>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          2085
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          2096
+    Length:          29
+    ReplacementText: 'sycl::vec<float, 1>{(1.0f / 16.0f)}.convert<sycl::half, sycl::rounding_mode::rte>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          2143
+    Length:          33
+    ReplacementText: 'scale2 * sycl::half2{y1,y1}'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          2193
+    Length:          34
+    ReplacementText: 'scale2 * sycl::half2{y16,y16}'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          2232
+    Length:          15
+    ReplacementText: __dpct_inline__
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          2248
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          2320
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          2342
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          2428
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          2439
+    Length:          47
+    ReplacementText: 'sycl::vec<int, 1>{(-64)}.convert<sycl::half, sycl::rounding_mode::rte>()[0] - sycl::vec<int, 1>{zero}.convert<sycl::half, sycl::rounding_mode::rte>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          2504
+    Length:          24
+    ReplacementText: 'sycl::half2{z1.as_half,z1.as_half}'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          2545
+    Length:          17
+    ReplacementText: 'sycl::half2{z16,z16}'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          2575
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          2585
+    Length:          21
+    ReplacementText: 'sycl::vec<float, 1>{1.0f}.convert<sycl::half, sycl::rounding_mode::rte>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          2618
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          2629
+    Length:          29
+    ReplacementText: 'sycl::vec<float, 1>{(1.0f / 16.0f)}.convert<sycl::half, sycl::rounding_mode::rte>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          2676
+    Length:          16
+    ReplacementText: 'sycl::half2{y1,y1}'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          2709
+    Length:          17
+    ReplacementText: 'sycl::half2{y16,y16}'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          2732
+    Length:          15
+    ReplacementText: __dpct_inline__
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          2748
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          2814
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          2834
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          2857
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          3393
+    Length:          40
+    ReplacementText: 'sycl::fma(q0.as_half2, y1y16[0], z1z16[0])'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          3498
+    Length:          40
+    ReplacementText: 'sycl::fma(q1.as_half2, y1y16[1], z1z16[1])'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          3603
+    Length:          40
+    ReplacementText: 'sycl::fma(q2.as_half2, y1y16[0], z1z16[0])'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          3661
+    Length:          40
+    ReplacementText: 'sycl::fma(q3.as_half2, y1y16[1], z1z16[1])'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          3740
+    Length:          40
+    ReplacementText: 'q0.as_half2 + z1z16[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          3830
+    Length:          40
+    ReplacementText: 'sycl::fma(q1.as_half2, y1y16[1], z1z16[1])'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          3920
+    Length:          40
+    ReplacementText: 'q2.as_half2 + z1z16[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Offset:          4010
+    Length:          40
+    ReplacementText: 'sycl::fma(q3.as_half2, y1y16[1], z1z16[1])'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+MainSourceFilesDigest:
+  - MainSourceFile:  '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/qdq_4.cuh'
+    Digest:          6a45fe3473e507e5226ce4d66b10d89c
+DpctVersion:     2024.0.0
+MainHelperFileName: ''
+USMLevel:        ''
+FeatureMap:      {}
+CompileTargets:  {}
+OptionMap:
+  AnalysisScopePath:
+    Value:           '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq'
+    Specified:       false
+  AsyncHandler:
+    Value:           'false'
+    Specified:       false
+  CommentsEnabled:
+    Value:           'false'
+    Specified:       false
+  CompilationsDir:
+    Value:           ''
+    Specified:       false
+  CtadEnabled:
+    Value:           'false'
+    Specified:       false
+  EnablepProfiling:
+    Value:           'false'
+    Specified:       false
+  ExperimentalFlag:
+    Value:           '0'
+    Specified:       false
+  ExplicitClNamespace:
+    Value:           'false'
+    Specified:       false
+  ExplicitNamespace:
+    Value:           '20'
+    Specified:       false
+  ExtensionDDFlag:
+    Value:           '0'
+    Specified:       false
+  ExtensionDEFlag:
+    Value:           '4294967295'
+    Specified:       false
+  HelperFuncPreferenceFlag:
+    Value:           '0'
+    Specified:       false
+  NDRangeDim:
+    Value:           '3'
+    Specified:       false
+  NoDRYPattern:
+    Value:           'false'
+    Specified:       false
+  NoUseGenericSpace:
+    Value:           ''
+    Specified:       true
+  OptimizeMigration:
+    Value:           'false'
+    Specified:       false
+  ProcessAll:
+    Value:           'false'
+    Specified:       false
+  RuleFile:
+    Value:           ''
+    Specified:       false
+  SyclNamedLambda:
+    Value:           'false'
+    Specified:       false
+  UsmLevel:
+    Value:           '1'
+    Specified:       false
+...

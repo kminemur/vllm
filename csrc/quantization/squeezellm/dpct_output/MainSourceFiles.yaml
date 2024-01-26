@@ -1,0 +1,496 @@
+---
+MainSourceFile:  MainSrcFiles_placehold
+Replacements:
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/squeezellm/quant_cuda_kernel.cu'
+    Offset:          49
+    Length:          18
+    ReplacementText: "#include <sycl/sycl.hpp>\n#include <dpct/dpct.hpp>\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/squeezellm/quant_cuda_kernel.cu'
+    Offset:          67
+    Length:          26
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/squeezellm/quant_cuda_kernel.cu'
+    Offset:          93
+    Length:          23
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/squeezellm/quant_cuda_kernel.cu'
+    Offset:          298
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/squeezellm/quant_cuda_kernel.cu'
+    Offset:          435
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/squeezellm/quant_cuda_kernel.cu'
+    Offset:          497
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/squeezellm/quant_cuda_kernel.cu'
+    Offset:          637
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/squeezellm/quant_cuda_kernel.cu'
+    Offset:          722
+    Length:          6
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/squeezellm/quant_cuda_kernel.cu'
+    Offset:          822
+    Length:          0
+    ReplacementText: ",\n    const sycl::nd_item<3> &item_ct1,\n    sycl::half2 *blockvec,\n    sycl::local_accessor<sycl::half, 2> deq2"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/squeezellm/quant_cuda_kernel.cu'
+    Offset:          897
+    Length:          10
+    ReplacementText: 'item_ct1.get_group(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/squeezellm/quant_cuda_kernel.cu'
+    Offset:          935
+    Length:          10
+    ReplacementText: 'item_ct1.get_group(1)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/squeezellm/quant_cuda_kernel.cu'
+    Offset:          948
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/squeezellm/quant_cuda_kernel.cu'
+    Offset:          981
+    Length:          39
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/squeezellm/quant_cuda_kernel.cu'
+    Offset:          1081
+    Length:          39
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/squeezellm/quant_cuda_kernel.cu'
+    Offset:          1133
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/squeezellm/quant_cuda_kernel.cu'
+    Offset:          1314
+    Length:          6
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/squeezellm/quant_cuda_kernel.cu'
+    Offset:          1345
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/squeezellm/quant_cuda_kernel.cu'
+    Offset:          1359
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/squeezellm/quant_cuda_kernel.cu'
+    Offset:          1569
+    Length:          16
+    ReplacementText: 'sycl::vec<int, 1>{0}.convert<sycl::half, sycl::rounding_mode::rtn>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/squeezellm/quant_cuda_kernel.cu'
+    Offset:          1599
+    Length:          0
+    ReplacementText: "    /*\n    DPCT1118:0: SYCL group functions and algorithms must be encountered in converged control flow. You may need to adjust the code.\n    */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/squeezellm/quant_cuda_kernel.cu'
+    Offset:          1603
+    Length:          15
+    ReplacementText: "/*\n    DPCT1065:2: Consider replacing sycl::nd_item::barrier() with sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better performance if there is no access to global memory.\n    */\n    item_ct1.barrier()"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/squeezellm/quant_cuda_kernel.cu'
+    Offset:          1628
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/squeezellm/quant_cuda_kernel.cu'
+    Offset:          1670
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/squeezellm/quant_cuda_kernel.cu'
+    Offset:          1747
+    Length:          11
+    ReplacementText: 'item_ct1.get_local_id(2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/squeezellm/quant_cuda_kernel.cu'
+    Offset:          1761
+    Length:          0
+    ReplacementText: "    /*\n    DPCT1118:1: SYCL group functions and algorithms must be encountered in converged control flow. You may need to adjust the code.\n    */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/squeezellm/quant_cuda_kernel.cu'
+    Offset:          1765
+    Length:          15
+    ReplacementText: "/*\n    DPCT1065:3: Consider replacing sycl::nd_item::barrier() with sycl::nd_item::barrier(sycl::access::fence_space::local_space) for better performance if there is no access to global memory.\n    */\n    item_ct1.barrier()"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/squeezellm/quant_cuda_kernel.cu'
+    Offset:          2205
+    Length:          6
+    ReplacementText: 'tmp2.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/squeezellm/quant_cuda_kernel.cu'
+    Offset:          2243
+    Length:          6
+    ReplacementText: 'tmp2.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/squeezellm/quant_cuda_kernel.cu'
+    Offset:          2413
+    Length:          36
+    ReplacementText: 'sycl::fma(tmp2, blockvec[k + 0], res2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/squeezellm/quant_cuda_kernel.cu'
+    Offset:          2552
+    Length:          6
+    ReplacementText: 'tmp2.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/squeezellm/quant_cuda_kernel.cu'
+    Offset:          2590
+    Length:          6
+    ReplacementText: 'tmp2.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/squeezellm/quant_cuda_kernel.cu'
+    Offset:          2760
+    Length:          36
+    ReplacementText: 'sycl::fma(tmp2, blockvec[k + 1], res2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/squeezellm/quant_cuda_kernel.cu'
+    Offset:          2900
+    Length:          6
+    ReplacementText: 'tmp2.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/squeezellm/quant_cuda_kernel.cu'
+    Offset:          2938
+    Length:          6
+    ReplacementText: 'tmp2.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/squeezellm/quant_cuda_kernel.cu'
+    Offset:          3108
+    Length:          36
+    ReplacementText: 'sycl::fma(tmp2, blockvec[k + 2], res2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/squeezellm/quant_cuda_kernel.cu'
+    Offset:          3248
+    Length:          6
+    ReplacementText: 'tmp2.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/squeezellm/quant_cuda_kernel.cu'
+    Offset:          3286
+    Length:          6
+    ReplacementText: 'tmp2.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/squeezellm/quant_cuda_kernel.cu'
+    Offset:          3456
+    Length:          36
+    ReplacementText: 'sycl::fma(tmp2, blockvec[k + 3], res2)'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/squeezellm/quant_cuda_kernel.cu'
+    Offset:          3524
+    Length:          35
+    ReplacementText: 'res2.x() + res2.y() + res'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/squeezellm/quant_cuda_kernel.cu'
+    Offset:          3767
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/squeezellm/quant_cuda_kernel.cu'
+    Offset:          3814
+    Length:          6
+    ReplacementText: 'res3.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/squeezellm/quant_cuda_kernel.cu'
+    Offset:          3847
+    Length:          6
+    ReplacementText: 'res3.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/squeezellm/quant_cuda_kernel.cu'
+    Offset:          4131
+    Length:          0
+    ReplacementText: "    /*\n    DPCT1007:4: Migration of half version of atomicAdd is not supported.\n    */\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/squeezellm/quant_cuda_kernel.cu'
+    Offset:          4715
+    Length:          4
+    ReplacementText: 'sycl::range<3>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/squeezellm/quant_cuda_kernel.cu'
+    Offset:          4727
+    Length:          93
+    ReplacementText: '1, (width + BLOCKWIDTH - 1) / BLOCKWIDTH, (height + BLOCKHEIGHT4 - 1) / BLOCKHEIGHT4'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/squeezellm/quant_cuda_kernel.cu'
+    Offset:          4825
+    Length:          4
+    ReplacementText: 'sycl::range<3>'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/squeezellm/quant_cuda_kernel.cu'
+    Offset:          4838
+    Length:          10
+    ReplacementText: 1, 1, BLOCKWIDTH
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+MainSourceFilesDigest:
+  - MainSourceFile:  '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/squeezellm/quant_cuda_kernel.cu'
+    Digest:          d5e8d33d4a19e8fb99bec808b52523ab
+DpctVersion:     2024.0.0
+MainHelperFileName: ''
+USMLevel:        ''
+FeatureMap:      {}
+CompileTargets:  {}
+OptionMap:
+  AnalysisScopePath:
+    Value:           '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/squeezellm'
+    Specified:       false
+  AsyncHandler:
+    Value:           'false'
+    Specified:       false
+  CommentsEnabled:
+    Value:           'false'
+    Specified:       false
+  CompilationsDir:
+    Value:           ''
+    Specified:       false
+  CtadEnabled:
+    Value:           'false'
+    Specified:       false
+  EnablepProfiling:
+    Value:           'false'
+    Specified:       false
+  ExperimentalFlag:
+    Value:           '0'
+    Specified:       false
+  ExplicitClNamespace:
+    Value:           'false'
+    Specified:       false
+  ExplicitNamespace:
+    Value:           '20'
+    Specified:       false
+  ExtensionDDFlag:
+    Value:           '0'
+    Specified:       false
+  ExtensionDEFlag:
+    Value:           '4294967295'
+    Specified:       false
+  HelperFuncPreferenceFlag:
+    Value:           '0'
+    Specified:       false
+  NDRangeDim:
+    Value:           '3'
+    Specified:       false
+  NoDRYPattern:
+    Value:           'false'
+    Specified:       false
+  NoUseGenericSpace:
+    Value:           ''
+    Specified:       true
+  OptimizeMigration:
+    Value:           'false'
+    Specified:       false
+  ProcessAll:
+    Value:           'false'
+    Specified:       false
+  RuleFile:
+    Value:           ''
+    Specified:       false
+  SyclNamedLambda:
+    Value:           'false'
+    Specified:       false
+  UsmLevel:
+    Value:           '1'
+    Specified:       false
+...

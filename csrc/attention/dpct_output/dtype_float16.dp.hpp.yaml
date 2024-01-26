@@ -1,0 +1,2962 @@
+---
+MainSourceFile:  '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dpct_output/dtype_float16.dp.hpp'
+Replacements:
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          1028
+    Length:          32
+    ReplacementText: "#include <sycl/sycl.hpp>\n#include <dpct/dpct.hpp>\n#include \"attention_generic.dp.hpp\""
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          1061
+    Length:          28
+    ReplacementText: '#include "dtype_float32.dp.hpp"'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          1398
+    Length:          5
+    ReplacementText: 'sycl::uint2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          1460
+    Length:          5
+    ReplacementText: 'sycl::uint4'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          1644
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          1682
+    Length:          5
+    ReplacementText: 'sycl::uint2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          1745
+    Length:          5
+    ReplacementText: 'sycl::uint4'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          1832
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          1905
+    Length:          56
+    ReplacementText: 'b = {a, a}'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          2108
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          2183
+    Length:          0
+    ReplacementText: "/*\n  DPCT1053:0: Migration of device assembly code is not supported.\n  */\n  "
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          2336
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          2347
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          2422
+    Length:          69
+    ReplacementText: '{lo, hi} = v'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: true
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          2502
+    Length:          49
+    ReplacementText: 'sycl::float2(half_to_float(lo), half_to_float(hi))'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          2751
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          2873
+    Length:          0
+    ReplacementText: "/*\n  DPCT1053:1: Migration of device assembly code is not supported.\n  */\n  "
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          3055
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          3091
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          3192
+    Length:          13
+    ReplacementText: DPCT_COMPATIBILITY_TEMP
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          3210
+    Length:          13
+    ReplacementText: DPCT_COMPATIBILITY_TEMP
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          3332
+    Length:          0
+    ReplacementText: "/*\n    DPCT1053:2: Migration of device assembly code is not supported.\n    */\n    "
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          3397
+    Length:          3
+    ReplacementText: 'f.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          3408
+    Length:          0
+    ReplacementText: "/*\n    DPCT1053:3: Migration of device assembly code is not supported.\n    */\n    "
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          3473
+    Length:          3
+    ReplacementText: 'f.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          3620
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          3703
+    Length:          0
+    ReplacementText: "/*\n  DPCT1053:4: Migration of device assembly code is not supported.\n  */\n  "
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          3874
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          3957
+    Length:          0
+    ReplacementText: "/*\n  DPCT1053:5: Migration of device assembly code is not supported.\n  */\n  "
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          4133
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          4144
+    Length:          5
+    ReplacementText: 'sycl::uint2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          4154
+    Length:          5
+    ReplacementText: 'sycl::uint2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          4163
+    Length:          5
+    ReplacementText: 'sycl::uint2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          4176
+    Length:          5
+    ReplacementText: 'sycl::uint2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          4187
+    Length:          3
+    ReplacementText: 'c.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          4197
+    Length:          3
+    ReplacementText: 'a.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          4202
+    Length:          3
+    ReplacementText: 'b.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          4210
+    Length:          3
+    ReplacementText: 'c.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          4220
+    Length:          3
+    ReplacementText: 'a.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          4225
+    Length:          3
+    ReplacementText: 'b.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          4253
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          4264
+    Length:          5
+    ReplacementText: 'sycl::uint4'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          4274
+    Length:          5
+    ReplacementText: 'sycl::uint4'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          4283
+    Length:          5
+    ReplacementText: 'sycl::uint4'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          4296
+    Length:          5
+    ReplacementText: 'sycl::uint4'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          4307
+    Length:          3
+    ReplacementText: 'c.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          4317
+    Length:          3
+    ReplacementText: 'a.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          4322
+    Length:          3
+    ReplacementText: 'b.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          4330
+    Length:          3
+    ReplacementText: 'c.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          4340
+    Length:          3
+    ReplacementText: 'a.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          4345
+    Length:          3
+    ReplacementText: 'b.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          4353
+    Length:          3
+    ReplacementText: 'c.z()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          4363
+    Length:          3
+    ReplacementText: 'a.z()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          4368
+    Length:          3
+    ReplacementText: 'b.z()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          4376
+    Length:          3
+    ReplacementText: 'c.w()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          4386
+    Length:          3
+    ReplacementText: 'a.w()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          4391
+    Length:          3
+    ReplacementText: 'b.w()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          4419
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          4430
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          4453
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          4468
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          4532
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          4555
+    Length:          5
+    ReplacementText: 'sycl::uint2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          4605
+    Length:          3
+    ReplacementText: 'a.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          4630
+    Length:          3
+    ReplacementText: 'a.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          4665
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          4688
+    Length:          5
+    ReplacementText: 'sycl::uint4'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          4738
+    Length:          3
+    ReplacementText: 'a.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          4763
+    Length:          3
+    ReplacementText: 'a.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          4788
+    Length:          3
+    ReplacementText: 'a.z()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          4813
+    Length:          3
+    ReplacementText: 'a.w()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          4885
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          4968
+    Length:          0
+    ReplacementText: "/*\n  DPCT1053:6: Migration of device assembly code is not supported.\n  */\n  "
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          5150
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          5233
+    Length:          0
+    ReplacementText: "/*\n  DPCT1053:7: Migration of device assembly code is not supported.\n  */\n  "
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          5420
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          5548
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          5559
+    Length:          5
+    ReplacementText: 'sycl::uint2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          5569
+    Length:          5
+    ReplacementText: 'sycl::uint2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          5578
+    Length:          5
+    ReplacementText: 'sycl::uint2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          5591
+    Length:          5
+    ReplacementText: 'sycl::uint2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          5602
+    Length:          3
+    ReplacementText: 'c.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          5642
+    Length:          3
+    ReplacementText: 'a.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          5647
+    Length:          3
+    ReplacementText: 'b.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          5655
+    Length:          3
+    ReplacementText: 'c.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          5695
+    Length:          3
+    ReplacementText: 'a.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          5700
+    Length:          3
+    ReplacementText: 'b.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          5739
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          5750
+    Length:          5
+    ReplacementText: 'sycl::uint2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          5772
+    Length:          5
+    ReplacementText: 'sycl::uint2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          5810
+    Length:          5
+    ReplacementText: 'sycl::uint2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          5821
+    Length:          3
+    ReplacementText: 'c.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          5864
+    Length:          3
+    ReplacementText: 'b.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          5872
+    Length:          3
+    ReplacementText: 'c.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          5915
+    Length:          3
+    ReplacementText: 'b.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          5954
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          5965
+    Length:          5
+    ReplacementText: 'sycl::uint4'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          5975
+    Length:          5
+    ReplacementText: 'sycl::uint4'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          5984
+    Length:          5
+    ReplacementText: 'sycl::uint4'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          5997
+    Length:          5
+    ReplacementText: 'sycl::uint4'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          6008
+    Length:          3
+    ReplacementText: 'c.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          6048
+    Length:          3
+    ReplacementText: 'a.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          6053
+    Length:          3
+    ReplacementText: 'b.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          6061
+    Length:          3
+    ReplacementText: 'c.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          6101
+    Length:          3
+    ReplacementText: 'a.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          6106
+    Length:          3
+    ReplacementText: 'b.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          6114
+    Length:          3
+    ReplacementText: 'c.z()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          6154
+    Length:          3
+    ReplacementText: 'a.z()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          6159
+    Length:          3
+    ReplacementText: 'b.z()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          6167
+    Length:          3
+    ReplacementText: 'c.w()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          6207
+    Length:          3
+    ReplacementText: 'a.w()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          6212
+    Length:          3
+    ReplacementText: 'b.w()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          6251
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          6262
+    Length:          5
+    ReplacementText: 'sycl::uint4'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          6284
+    Length:          5
+    ReplacementText: 'sycl::uint4'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          6322
+    Length:          5
+    ReplacementText: 'sycl::uint4'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          6333
+    Length:          3
+    ReplacementText: 'c.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          6376
+    Length:          3
+    ReplacementText: 'b.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          6384
+    Length:          3
+    ReplacementText: 'c.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          6427
+    Length:          3
+    ReplacementText: 'b.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          6435
+    Length:          3
+    ReplacementText: 'c.z()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          6478
+    Length:          3
+    ReplacementText: 'b.z()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          6486
+    Length:          3
+    ReplacementText: 'c.w()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          6529
+    Length:          3
+    ReplacementText: 'b.w()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          6568
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          6716
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          6727
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          6766
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          6800
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          6845
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          6853
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          6861
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          6899
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          6910
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          6960
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          7023
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          7046
+    Length:          5
+    ReplacementText: 'sycl::uint2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          7055
+    Length:          5
+    ReplacementText: 'sycl::uint2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          7093
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          7121
+    Length:          3
+    ReplacementText: 'a.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          7126
+    Length:          3
+    ReplacementText: 'b.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          7145
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          7173
+    Length:          3
+    ReplacementText: 'a.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          7178
+    Length:          3
+    ReplacementText: 'b.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          7218
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          7253
+    Length:          5
+    ReplacementText: 'sycl::uint2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          7316
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          7347
+    Length:          3
+    ReplacementText: 'b.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          7366
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          7397
+    Length:          3
+    ReplacementText: 'b.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          7437
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          7460
+    Length:          5
+    ReplacementText: 'sycl::uint4'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          7469
+    Length:          5
+    ReplacementText: 'sycl::uint4'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          7507
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          7535
+    Length:          3
+    ReplacementText: 'a.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          7540
+    Length:          3
+    ReplacementText: 'b.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          7559
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          7587
+    Length:          3
+    ReplacementText: 'a.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          7592
+    Length:          3
+    ReplacementText: 'b.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          7611
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          7639
+    Length:          3
+    ReplacementText: 'a.z()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          7644
+    Length:          3
+    ReplacementText: 'b.z()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          7663
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          7691
+    Length:          3
+    ReplacementText: 'a.w()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          7696
+    Length:          3
+    ReplacementText: 'b.w()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          7736
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          7771
+    Length:          5
+    ReplacementText: 'sycl::uint4'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          7834
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          7865
+    Length:          3
+    ReplacementText: 'b.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          7884
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          7915
+    Length:          3
+    ReplacementText: 'b.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          7934
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          7965
+    Length:          3
+    ReplacementText: 'b.z()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          7984
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          8015
+    Length:          3
+    ReplacementText: 'b.w()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          8074
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          8169
+    Length:          0
+    ReplacementText: "/*\n  DPCT1053:8: Migration of device assembly code is not supported.\n  */\n  "
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          8372
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          8474
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          8485
+    Length:          5
+    ReplacementText: 'sycl::uint2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          8495
+    Length:          5
+    ReplacementText: 'sycl::uint2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          8504
+    Length:          5
+    ReplacementText: 'sycl::uint2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          8513
+    Length:          5
+    ReplacementText: 'sycl::uint2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          8526
+    Length:          5
+    ReplacementText: 'sycl::uint2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          8537
+    Length:          3
+    ReplacementText: 'd.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          8547
+    Length:          3
+    ReplacementText: 'a.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          8552
+    Length:          3
+    ReplacementText: 'b.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          8557
+    Length:          3
+    ReplacementText: 'c.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          8565
+    Length:          3
+    ReplacementText: 'd.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          8575
+    Length:          3
+    ReplacementText: 'a.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          8580
+    Length:          3
+    ReplacementText: 'b.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          8585
+    Length:          3
+    ReplacementText: 'c.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          8613
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          8624
+    Length:          5
+    ReplacementText: 'sycl::uint2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          8646
+    Length:          5
+    ReplacementText: 'sycl::uint2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          8655
+    Length:          5
+    ReplacementText: 'sycl::uint2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          8693
+    Length:          5
+    ReplacementText: 'sycl::uint2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          8704
+    Length:          3
+    ReplacementText: 'd.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          8717
+    Length:          3
+    ReplacementText: 'b.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          8722
+    Length:          3
+    ReplacementText: 'c.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          8730
+    Length:          3
+    ReplacementText: 'd.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          8743
+    Length:          3
+    ReplacementText: 'b.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          8748
+    Length:          3
+    ReplacementText: 'c.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          8776
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          8787
+    Length:          5
+    ReplacementText: 'sycl::uint4'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          8797
+    Length:          5
+    ReplacementText: 'sycl::uint4'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          8806
+    Length:          5
+    ReplacementText: 'sycl::uint4'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          8815
+    Length:          5
+    ReplacementText: 'sycl::uint4'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          8828
+    Length:          5
+    ReplacementText: 'sycl::uint4'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          8839
+    Length:          3
+    ReplacementText: 'd.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          8849
+    Length:          3
+    ReplacementText: 'a.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          8854
+    Length:          3
+    ReplacementText: 'b.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          8859
+    Length:          3
+    ReplacementText: 'c.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          8867
+    Length:          3
+    ReplacementText: 'd.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          8877
+    Length:          3
+    ReplacementText: 'a.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          8882
+    Length:          3
+    ReplacementText: 'b.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          8887
+    Length:          3
+    ReplacementText: 'c.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          8895
+    Length:          3
+    ReplacementText: 'd.z()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          8905
+    Length:          3
+    ReplacementText: 'a.z()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          8910
+    Length:          3
+    ReplacementText: 'b.z()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          8915
+    Length:          3
+    ReplacementText: 'c.z()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          8923
+    Length:          3
+    ReplacementText: 'd.w()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          8933
+    Length:          3
+    ReplacementText: 'a.w()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          8938
+    Length:          3
+    ReplacementText: 'b.w()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          8943
+    Length:          3
+    ReplacementText: 'c.w()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          8971
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          8982
+    Length:          5
+    ReplacementText: 'sycl::uint4'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          9004
+    Length:          5
+    ReplacementText: 'sycl::uint4'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          9013
+    Length:          5
+    ReplacementText: 'sycl::uint4'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          9051
+    Length:          5
+    ReplacementText: 'sycl::uint4'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          9062
+    Length:          3
+    ReplacementText: 'd.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          9075
+    Length:          3
+    ReplacementText: 'b.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          9080
+    Length:          3
+    ReplacementText: 'c.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          9088
+    Length:          3
+    ReplacementText: 'd.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          9101
+    Length:          3
+    ReplacementText: 'b.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          9106
+    Length:          3
+    ReplacementText: 'c.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          9114
+    Length:          3
+    ReplacementText: 'd.z()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          9127
+    Length:          3
+    ReplacementText: 'b.z()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          9132
+    Length:          3
+    ReplacementText: 'c.z()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          9140
+    Length:          3
+    ReplacementText: 'd.w()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          9153
+    Length:          3
+    ReplacementText: 'b.w()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          9158
+    Length:          3
+    ReplacementText: 'c.w()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          9186
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          9338
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          9349
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          9384
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          9399
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          9433
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          9501
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          9512
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          9547
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          9601
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          9624
+    Length:          5
+    ReplacementText: 'sycl::uint2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          9633
+    Length:          5
+    ReplacementText: 'sycl::uint2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          9683
+    Length:          3
+    ReplacementText: 'a.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          9688
+    Length:          3
+    ReplacementText: 'b.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          9713
+    Length:          3
+    ReplacementText: 'a.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          9718
+    Length:          3
+    ReplacementText: 'b.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          9753
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          9788
+    Length:          5
+    ReplacementText: 'sycl::uint2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          9866
+    Length:          3
+    ReplacementText: 'b.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          9894
+    Length:          3
+    ReplacementText: 'b.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          9929
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          9952
+    Length:          5
+    ReplacementText: 'sycl::uint4'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          9961
+    Length:          5
+    ReplacementText: 'sycl::uint4'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          10011
+    Length:          3
+    ReplacementText: 'a.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          10016
+    Length:          3
+    ReplacementText: 'b.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          10041
+    Length:          3
+    ReplacementText: 'a.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          10046
+    Length:          3
+    ReplacementText: 'b.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          10071
+    Length:          3
+    ReplacementText: 'a.z()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          10076
+    Length:          3
+    ReplacementText: 'b.z()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          10101
+    Length:          3
+    ReplacementText: 'a.w()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          10106
+    Length:          3
+    ReplacementText: 'b.w()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          10141
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          10176
+    Length:          5
+    ReplacementText: 'sycl::uint4'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          10254
+    Length:          3
+    ReplacementText: 'b.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          10282
+    Length:          3
+    ReplacementText: 'b.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          10310
+    Length:          3
+    ReplacementText: 'b.z()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          10338
+    Length:          3
+    ReplacementText: 'b.w()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          10399
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          10482
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          10519
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          10561
+    Length:          5
+    ReplacementText: 'tmp.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          10569
+    Length:          5
+    ReplacementText: 'tmp.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          10597
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          10618
+    Length:          5
+    ReplacementText: 'sycl::uint2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          10648
+    Length:          3
+    ReplacementText: 'v.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          10653
+    Length:          3
+    ReplacementText: 'v.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          10697
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          10718
+    Length:          5
+    ReplacementText: 'sycl::uint4'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          10748
+    Length:          3
+    ReplacementText: 'v.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          10753
+    Length:          3
+    ReplacementText: 'v.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          10772
+    Length:          3
+    ReplacementText: 'v.z()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          10791
+    Length:          3
+    ReplacementText: 'v.w()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          10852
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          10945
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          10987
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          11041
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          11068
+    Length:          5
+    ReplacementText: 'sycl::uint2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          11097
+    Length:          5
+    ReplacementText: 'dst.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          11131
+    Length:          5
+    ReplacementText: 'dst.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          11173
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          11200
+    Length:          5
+    ReplacementText: 'sycl::uint4'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          11229
+    Length:          5
+    ReplacementText: 'dst.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          11263
+    Length:          5
+    ReplacementText: 'dst.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          11297
+    Length:          5
+    ReplacementText: 'dst.z()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          11331
+    Length:          5
+    ReplacementText: 'dst.w()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          11401
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          11478
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          11489
+    Length:          6
+    ReplacementText: 'sycl::float2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          11558
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          11586
+    Length:          5
+    ReplacementText: 'sycl::uint2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          11638
+    Length:          3
+    ReplacementText: 'u.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          11670
+    Length:          3
+    ReplacementText: 'u.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          11700
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          11728
+    Length:          5
+    ReplacementText: 'sycl::uint4'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          11780
+    Length:          3
+    ReplacementText: 'u.x()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          11812
+    Length:          3
+    ReplacementText: 'u.y()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          11844
+    Length:          3
+    ReplacementText: 'u.z()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          11876
+    Length:          3
+    ReplacementText: 'u.w()'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Offset:          11930
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+MainSourceFilesDigest:
+  - MainSourceFile:  '/nfs/site/home/kminemur/projects/vllm/csrc/attention/dtype_float16.cuh'
+    Digest:          df0418c59971d19282352a32e2fbd354
+DpctVersion:     2024.0.0
+MainHelperFileName: ''
+USMLevel:        ''
+FeatureMap:      {}
+CompileTargets:  {}
+OptionMap:
+  AnalysisScopePath:
+    Value:           '/nfs/site/home/kminemur/projects/vllm/csrc/attention'
+    Specified:       false
+  AsyncHandler:
+    Value:           'false'
+    Specified:       false
+  CommentsEnabled:
+    Value:           'false'
+    Specified:       false
+  CompilationsDir:
+    Value:           ''
+    Specified:       false
+  CtadEnabled:
+    Value:           'false'
+    Specified:       false
+  EnablepProfiling:
+    Value:           'false'
+    Specified:       false
+  ExperimentalFlag:
+    Value:           '0'
+    Specified:       false
+  ExplicitClNamespace:
+    Value:           'false'
+    Specified:       false
+  ExplicitNamespace:
+    Value:           '20'
+    Specified:       false
+  ExtensionDDFlag:
+    Value:           '0'
+    Specified:       false
+  ExtensionDEFlag:
+    Value:           '4294967295'
+    Specified:       false
+  HelperFuncPreferenceFlag:
+    Value:           '0'
+    Specified:       false
+  NDRangeDim:
+    Value:           '3'
+    Specified:       false
+  NoDRYPattern:
+    Value:           'false'
+    Specified:       false
+  NoUseGenericSpace:
+    Value:           ''
+    Specified:       true
+  OptimizeMigration:
+    Value:           'false'
+    Specified:       false
+  ProcessAll:
+    Value:           'false'
+    Specified:       false
+  RuleFile:
+    Value:           ''
+    Specified:       false
+  SyclNamedLambda:
+    Value:           'false'
+    Specified:       false
+  UsmLevel:
+    Value:           '1'
+    Specified:       false
+...

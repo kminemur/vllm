@@ -1,0 +1,991 @@
+---
+MainSourceFile:  '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/dpct_output/matrix_view.dp.hpp'
+Replacements:
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          151
+    Length:          26
+    ReplacementText: "#include <sycl/sycl.hpp>\n#include <dpct/dpct.hpp>\n"
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          177
+    Length:          23
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          201
+    Length:          23
+    ReplacementText: '#include "qdq_util.dp.hpp"'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          303
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          363
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          374
+    Length:          15
+    ReplacementText: __dpct_inline__
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          412
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          523
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          534
+    Length:          15
+    ReplacementText: __dpct_inline__
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          550
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          630
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          641
+    Length:          15
+    ReplacementText: __dpct_inline__
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          657
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          712
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          760
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          771
+    Length:          15
+    ReplacementText: __dpct_inline__
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          787
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          845
+    Length:          40
+    ReplacementText: 'sycl::half2{data[row * width + column],data[row * width + column]}'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          893
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          904
+    Length:          15
+    ReplacementText: __dpct_inline__
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          926
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          1013
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          1024
+    Length:          15
+    ReplacementText: __dpct_inline__
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          1051
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          1110
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          1124
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          1163
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          1191
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          1230
+    Length:          15
+    ReplacementText: 'i01[1]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          1266
+    Length:          16
+    ReplacementText: 'i01[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          1303
+    Length:          15
+    ReplacementText: 'i23[1]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          1339
+    Length:          16
+    ReplacementText: 'i23[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          1367
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          1378
+    Length:          15
+    ReplacementText: __dpct_inline__
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          1467
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          1481
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          1519
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          1547
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          1586
+    Length:          29
+    ReplacementText: 'sycl::vec<sycl::half, 1>{i01[1]}.convert<float, sycl::rounding_mode::automatic>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          1636
+    Length:          30
+    ReplacementText: 'sycl::vec<sycl::half, 1>{i01[0]}.convert<float, sycl::rounding_mode::automatic>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          1687
+    Length:          29
+    ReplacementText: 'sycl::vec<sycl::half, 1>{i23[1]}.convert<float, sycl::rounding_mode::automatic>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          1737
+    Length:          30
+    ReplacementText: 'sycl::vec<sycl::half, 1>{i23[0]}.convert<float, sycl::rounding_mode::automatic>()[0]'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          1780
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          1791
+    Length:          15
+    ReplacementText: __dpct_inline__
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          1821
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          1881
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          1895
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          1933
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          1961
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          2000
+    Length:          29
+    ReplacementText: 'sycl::half2{i01[1],i01[1]}'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          2050
+    Length:          30
+    ReplacementText: 'sycl::half2{i01[0],i01[0]}'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          2101
+    Length:          29
+    ReplacementText: 'sycl::half2{i23[1],i23[1]}'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          2151
+    Length:          30
+    ReplacementText: 'sycl::half2{i23[0],i23[0]}'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          2232
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          2292
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          2303
+    Length:          15
+    ReplacementText: __dpct_inline__
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          2338
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          2449
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          2460
+    Length:          15
+    ReplacementText: __dpct_inline__
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          2476
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          2556
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          2567
+    Length:          15
+    ReplacementText: __dpct_inline__
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          2583
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          2638
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          2686
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          2697
+    Length:          15
+    ReplacementText: __dpct_inline__
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          2713
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          2793
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          2804
+    Length:          15
+    ReplacementText: __dpct_inline__
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          2850
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          2906
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          2917
+    Length:          15
+    ReplacementText: __dpct_inline__
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          2969
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          2986
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          3043
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          3054
+    Length:          15
+    ReplacementText: __dpct_inline__
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          3101
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          3110
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          3119
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          3128
+    Length:          4
+    ReplacementText: 'sycl::half'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          3151
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          3163
+    Length:          22
+    ReplacementText: 'sycl::half2{v0,v1}'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          3195
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          3207
+    Length:          22
+    ReplacementText: 'sycl::half2{v2,v3}'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          3239
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          3253
+    Length:          5
+    ReplacementText: 'sycl::half2'
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          3446
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          3457
+    Length:          15
+    ReplacementText: __dpct_inline__
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          3612
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          3623
+    Length:          15
+    ReplacementText: __dpct_inline__
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          3802
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          3813
+    Length:          15
+    ReplacementText: __dpct_inline__
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          4073
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          4084
+    Length:          15
+    ReplacementText: __dpct_inline__
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          4527
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          4538
+    Length:          15
+    ReplacementText: __dpct_inline__
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          4696
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          4707
+    Length:          15
+    ReplacementText: __dpct_inline__
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          4879
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          4890
+    Length:          15
+    ReplacementText: __dpct_inline__
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          4997
+    Length:          11
+    ReplacementText: ''
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+  - FilePath:        '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Offset:          5008
+    Length:          15
+    ReplacementText: __dpct_inline__
+    ConstantFlag:    ''
+    ConstantOffset:  0
+    InitStr:         ''
+    NewHostVarName:  ''
+    BlockLevelFormatFlag: false
+MainSourceFilesDigest:
+  - MainSourceFile:  '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq/matrix_view.cuh'
+    Digest:          0761629a94dfceef533b087fdefa63fb
+DpctVersion:     2024.0.0
+MainHelperFileName: ''
+USMLevel:        ''
+FeatureMap:      {}
+CompileTargets:  {}
+OptionMap:
+  AnalysisScopePath:
+    Value:           '/nfs/site/home/kminemur/projects/vllm/csrc/quantization/gptq'
+    Specified:       false
+  AsyncHandler:
+    Value:           'false'
+    Specified:       false
+  CommentsEnabled:
+    Value:           'false'
+    Specified:       false
+  CompilationsDir:
+    Value:           ''
+    Specified:       false
+  CtadEnabled:
+    Value:           'false'
+    Specified:       false
+  EnablepProfiling:
+    Value:           'false'
+    Specified:       false
+  ExperimentalFlag:
+    Value:           '0'
+    Specified:       false
+  ExplicitClNamespace:
+    Value:           'false'
+    Specified:       false
+  ExplicitNamespace:
+    Value:           '20'
+    Specified:       false
+  ExtensionDDFlag:
+    Value:           '0'
+    Specified:       false
+  ExtensionDEFlag:
+    Value:           '4294967295'
+    Specified:       false
+  HelperFuncPreferenceFlag:
+    Value:           '0'
+    Specified:       false
+  NDRangeDim:
+    Value:           '3'
+    Specified:       false
+  NoDRYPattern:
+    Value:           'false'
+    Specified:       false
+  NoUseGenericSpace:
+    Value:           ''
+    Specified:       true
+  OptimizeMigration:
+    Value:           'false'
+    Specified:       false
+  ProcessAll:
+    Value:           'false'
+    Specified:       false
+  RuleFile:
+    Value:           ''
+    Specified:       false
+  SyclNamedLambda:
+    Value:           'false'
+    Specified:       false
+  UsmLevel:
+    Value:           '1'
+    Specified:       false
+...
