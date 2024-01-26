@@ -300,12 +300,13 @@ if BUILD_XPU_OPS:
     XPU_CXX_FLAGS += ["-DVLLM_BUILD_XPU_OPS", "-DVLLM_BUILD_XPU_ONLY" "-fsycl", "-fsycl-targets=spir64"]
     XPU_LD_FLAGS += [f"-D_GLIBCXX_USE_CXX11_ABI={ABI}"] + ["-fsycl", "-fsycl-targets=spir64"] + ["-lsycl"]
     XPU_OPS_SOURCES += [
-        "csrc/xpu/activation_xpu.cpp",
-        "csrc/xpu/attention_xpu.cpp",
-        "csrc/xpu/cache_ops_xpu.cpp",
-        "csrc/xpu/layernorm_xpu.cpp",
-        "csrc/xpu/pos_encoding_xpu.cpp",
-        "csrc/pybind.cpp",
+        # "csrc/xpu/activation_xpu.cpp",
+        # "csrc/xpu/attention_xpu.cpp",
+        # "csrc/xpu/cache_ops_xpu.cpp",
+        # "csrc/xpu/layernorm_xpu.cpp",
+        # "csrc/xpu/pos_encoding_xpu.cpp",
+        # "csrc/pybind.cpp",
+        "csrc/attention/attention_kernels.dp.cpp",
     ]
     xpu_extension = DPCPPExtension(
         name="vllm._C",
