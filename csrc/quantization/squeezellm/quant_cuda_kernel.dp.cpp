@@ -185,7 +185,7 @@ void squeezellm_gemm(
               lookup_table_ptr,
               height, width, batch, vec_height,
               item,
-              blockvec_acc,deq2_acc
+              blockvec_acc, deq2_acc
             );
       });
   });
