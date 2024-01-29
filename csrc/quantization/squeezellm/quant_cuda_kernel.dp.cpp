@@ -42,13 +42,8 @@ void NUQ4MatMulKernel(
   }
 
   sycl::half res;
-#ifndef USE_ROCM
   sycl::half2 res2;
   sycl::half2 tmp2;
-#else
-  __half2 res2;
-  __half2 tmp2;
-#endif
 
   int i;
   int k;
@@ -90,99 +85,55 @@ void NUQ4MatMulKernel(
     while (k < blockwidth2) {
       tmp1 = as_unsigned(mat[i]);
 
-#ifndef USE_ROCM
       res2 = {};
       tmp2 = {};
-#else
-      res2.x = __half_as_ushort(__float2half(0));
-      res2.y = __half_as_ushort(__float2half(0));
-      tmp2.x = __half_as_ushort(__float2half(0));
-      tmp2.y = __half_as_ushort(__float2half(0));
-#endif
 
       lut_index1 = tmp1 & 0xF;
       lut_index2 = (tmp1 >> 4) & 0xF;
-#ifndef USE_ROCM
+
       tmp2.x() = deq2[lut_index1][off];
       tmp2.y() = deq2[lut_index2][off];
-#else
-      tmp2.x = __half_as_ushort(deq2[lut_index1][off]);
-      tmp2.y = __half_as_ushort(deq2[lut_index2][off]);
-#endif
       res2 = sycl::fma(tmp2, blockvec[k + 0], res2);
 
       lut_index1 = (tmp1 >> 8) & 0xF;
       lut_index2 = (tmp1 >> 12) & 0xF;
-#ifndef USE_ROCM
+
       tmp2.x() = deq2[lut_index1][off];
       tmp2.y() = deq2[lut_index2][off];
-#else
-      tmp2.x = __half_as_ushort(deq2[lut_index1][off]);
-      tmp2.y = __half_as_ushort(deq2[lut_index2][off]);
-#endif
       res2 = sycl::fma(tmp2, blockvec[k + 1], res2);
 
       lut_index1 = (tmp1 >> 16) & 0xF;
       lut_index2 = (tmp1 >> 20) & 0xF;
-#ifndef USE_ROCM
+
       tmp2.x() = deq2[lut_index1][off];
       tmp2.y() = deq2[lut_index2][off];
-#else
-      tmp2.x = __half_as_ushort(deq2[lut_index1][off]);
-      tmp2.y = __half_as_ushort(deq2[lut_index2][off]);
-#endif
       res2 = sycl::fma(tmp2, blockvec[k + 2], res2);
 
       lut_index1 = (tmp1 >> 24) & 0xF;
       lut_index2 = (tmp1 >> 28) & 0xF;
-#ifndef USE_ROCM
+
       tmp2.x() = deq2[lut_index1][off];
       tmp2.y() = deq2[lut_index2][off];
-#else
-      tmp2.x = __half_as_ushort(deq2[lut_index1][off]);
-      tmp2.y = __half_as_ushort(deq2[lut_index2][off]);
-#endif
       res2 = sycl::fma(tmp2, blockvec[k + 3], res2);
 
-#ifndef USE_ROCM
       res = res2.x() + res2.y() + res;
-#else
-      res = __hadd(__hadd(__ushort_as_half(res2.x), __ushort_as_half(res2.y)), res);
-#endif
 
       i += width;
       k += 4;
     }
 
     // col%2 -> only set one of the two values
-#ifndef USE_ROCM
     sycl::half2 res3 = {};
     if (col % 2 == 0) {
       res3.x() = res;
     } else {
       res3.y() = res;
     }
-#else
-    __half2 res3;
-    res3.x = __half_as_ushort(__float2half(0));
-    res3.y = __half_as_ushort(__float2half(0));
-     if (col % 2 == 0) {
-      res3.x = __half_as_ushort(res);
-    } else {
-      res3.y = __half_as_ushort(res);
-    }
-#endif
 
-// #ifndef USE_ROCM
-//     /*
-//     DPCT1007:4: Migration of half version of atomicAdd is not supported.
-//     */
-//     atomicAdd(&mul[b * width / 2 + col / 2], res3);
-// #else
-//     int tmp_addr = b * width / 2 + col / 2;
-//     atomicAdd(&(mul[tmp_addr].x), __half2float(__ushort_as_half(res3.x)));
-//     atomicAdd(&(mul[tmp_addr].y), __half2float(__ushort_as_half(res3.y)));
-// #endif
+    /*
+    DPCT1007:4: Migration of half version of atomicAdd is not supported.
+    */
+    // atomicAdd(&mul[b * width / 2 + col / 2], res3);
   }
 }
 
