@@ -297,7 +297,7 @@ XPU_OPS_SOURCES = []
 XPU_CXX_FLAGS = []
 XPU_LD_FLAGS = []
 if BUILD_XPU_OPS:
-    XPU_CXX_FLAGS += ["-DVLLM_BUILD_XPU_OPS", "-DVLLM_BUILD_XPU_ONLY" "-fsycl", "-fsycl-targets=spir64"]
+    XPU_CXX_FLAGS += ["-DVLLM_BUILD_XPU_OPS", "-DVLLM_BUILD_XPU_ONLY", "-fsycl", "-fsycl-targets=spir64", "-Wno-sycl-strict"]
     XPU_LD_FLAGS += [f"-D_GLIBCXX_USE_CXX11_ABI={ABI}"] + ["-fsycl", "-fsycl-targets=spir64"] + ["-lsycl"]
     XPU_OPS_SOURCES += [
         # "csrc/xpu/activation_xpu.cpp",
@@ -308,6 +308,7 @@ if BUILD_XPU_OPS:
         # "csrc/pybind.cpp",
         # "csrc/attention/attention_kernels.dp.cpp",
         # "csrc/quantization/awq/gemm_kernels.dp.cpp",
+        # "csrc/quantization/gptq/q_gemm.dp.cpp",
         "csrc/quantization/squeezellm/quant_cuda_kernel.dp.cpp",
     ]
     xpu_extension = DPCPPExtension(
