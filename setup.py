@@ -308,8 +308,8 @@ if BUILD_XPU_OPS:
         # "csrc/pybind.cpp",
         # "csrc/attention/attention_kernels.dp.cpp",
         # "csrc/quantization/awq/gemm_kernels.dp.cpp",
-        # "csrc/quantization/gptq/q_gemm.dp.cpp",
-        "csrc/quantization/squeezellm/quant_cuda_kernel.dp.cpp",
+        "csrc/quantization/gptq/q_gemm.dp.cpp",
+        # "csrc/quantization/squeezellm/quant_cuda_kernel.dp.cpp",
     ]
     xpu_extension = DPCPPExtension(
         name="vllm._C",
