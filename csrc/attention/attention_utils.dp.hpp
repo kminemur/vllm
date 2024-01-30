@@ -20,7 +20,7 @@
 #include <sycl/sycl.hpp>
 #include <dpct/dpct.hpp>
 #include "../cuda_compat.h" // may need to change to specify the relative path of cuda_compat.h
-#include "attention_dtypes.h"
+#include "attention_dtypes.hpp"
 
 #include <float.h>
 #include <type_traits>
