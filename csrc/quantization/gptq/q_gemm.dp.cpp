@@ -50,18 +50,27 @@ __dpct_inline__ float dot22_8_f(sycl::half2 (&dq)[4], const sycl::half *a_ptr)
 }
 
 typedef void (*fp_gemm_half_q_half_gptq_kernel)(
-    const sycl::half *, const uint32_t *, const uint32_t *, const sycl::half *,
-    sycl::half *, const int, const int, const int, const int, const int *,
-    sycl::accessor<sycl::half, 2> block_a);
+    const sycl::half *, const uint32_t *, const uint32_t *,
+    const sycl::half *, sycl::half *, const int,
+    const int, const int, const int, const int *,
+    const sycl::nd_item<3> &,
+    sycl::accessor<sycl::half, 2>);
 
 template <bool first_block, int m_count>
 
 void gemm_half_q_half_gptq_kernel(
-    const sycl::half *__restrict__ a, const uint32_t *__restrict__ b_q_weight,
+    const sycl::half *__restrict__ a,
+    const uint32_t *__restrict__ b_q_weight,
     const uint32_t *__restrict__ b_gptq_qzeros,
-    const sycl::half *__restrict__ b_gptq_scales, sycl::half *__restrict__ c,
-    const int size_m, const int size_n, const int size_k, const int groups,
-    const int *__restrict__ b_q_perm, const sycl::nd_item<3> &item_ct1)
+    const sycl::half *__restrict__ b_gptq_scales,
+    sycl::half *__restrict__ c,
+    const int size_m,
+    const int size_n,
+    const int size_k,
+    const int groups,
+    const int *__restrict__ b_q_perm,
+    const sycl::nd_item<3> &item_ct1,
+    sycl::accessor<sycl::half, 2> block_a)
 {
     MatrixView_half a_(a, size_m, size_k);
     MatrixView_half_rw c_(c, size_m, size_n);
@@ -204,31 +213,31 @@ void gemm_half_q_half_gptq_kernel(
 
 fp_gemm_half_q_half_gptq_kernel pick_gemm_half_q_half_gptq_kernel(bool first_block, const int m_count)
 {
-    // #if BLOCK_M_SIZE_MAX >= 1
-    // if (m_count == 1) return gemm_half_q_half_gptq_kernel<true, 1>;
-    // #endif
-    // #if BLOCK_M_SIZE_MAX >= 2
-    // if (m_count == 2) return gemm_half_q_half_gptq_kernel<true, 2>;
-    // #endif
-    // #if BLOCK_M_SIZE_MAX >= 3
-    // if (m_count == 3) return gemm_half_q_half_gptq_kernel<true, 3>;
-    // #endif
-    // #if BLOCK_M_SIZE_MAX >= 4
-    // if (m_count == 4) return gemm_half_q_half_gptq_kernel<true, 4>;
-    // #endif
-    // #if BLOCK_M_SIZE_MAX >= 5
-    // if (m_count == 5) return gemm_half_q_half_gptq_kernel<true, 5>;
-    // #endif
-    // #if BLOCK_M_SIZE_MAX >= 6
-    // if (m_count == 6) return gemm_half_q_half_gptq_kernel<true, 6>;
-    // #endif
-    // #if BLOCK_M_SIZE_MAX >= 7
-    // if (m_count == 7) return gemm_half_q_half_gptq_kernel<true, 7>;
-    // #endif
-    // #if BLOCK_M_SIZE_MAX >= 8
-    // if (m_count == 8) return gemm_half_q_half_gptq_kernel<true, 8>;
-    // #endif
-    // return NULL;
+    #if BLOCK_M_SIZE_MAX >= 1
+    if (m_count == 1) return gemm_half_q_half_gptq_kernel<true, 1>;
+    #endif
+    #if BLOCK_M_SIZE_MAX >= 2
+    if (m_count == 2) return gemm_half_q_half_gptq_kernel<true, 2>;
+    #endif
+    #if BLOCK_M_SIZE_MAX >= 3
+    if (m_count == 3) return gemm_half_q_half_gptq_kernel<true, 3>;
+    #endif
+    #if BLOCK_M_SIZE_MAX >= 4
+    if (m_count == 4) return gemm_half_q_half_gptq_kernel<true, 4>;
+    #endif
+    #if BLOCK_M_SIZE_MAX >= 5
+    if (m_count == 5) return gemm_half_q_half_gptq_kernel<true, 5>;
+    #endif
+    #if BLOCK_M_SIZE_MAX >= 6
+    if (m_count == 6) return gemm_half_q_half_gptq_kernel<true, 6>;
+    #endif
+    #if BLOCK_M_SIZE_MAX >= 7
+    if (m_count == 7) return gemm_half_q_half_gptq_kernel<true, 7>;
+    #endif
+    #if BLOCK_M_SIZE_MAX >= 8
+    if (m_count == 8) return gemm_half_q_half_gptq_kernel<true, 8>;
+    #endif
+    return NULL;
 }
 
 void gemm_half_q_half_cuda_part(const sycl::half *a, const uint32_t *b_q_weight,
@@ -256,19 +265,19 @@ void gemm_half_q_half_cuda_part(const sycl::half *a, const uint32_t *b_q_weight,
     // Create a queue
     sycl::queue q;
 
-    // Submit a command group to the queue
-    q.submit([&](sycl::handler& cgh) {
-        sycl::accessor block_a_acc(block_a, cgh, sycl::read_write);
+    // // Submit a command group to the queue
+    // q.submit([&](sycl::handler& cgh) {
+    //     sycl::accessor block_a_acc(block_a, cgh, sycl::read_write);
 
-        dpct::get_in_order_queue().parallel_for(
-            sycl::nd_range<3>(gridDim * blockDim, blockDim),
-            [=](sycl::nd_item<3> item_ct1) {
+    //     dpct::get_in_order_queue().parallel_for(
+    //         sycl::nd_range<3>(gridDim * blockDim, blockDim),
+    //         [=](sycl::nd_item<3> item_ct1) {
 
-                (a, b_q_weight, b_gptq_qzeros, b_gptq_scales, c, size_m, size_n,
-                size_k, groups, b_q_perm, block_a_acc);
+    //             kernel(a, b_q_weight, b_gptq_qzeros, b_gptq_scales, c, size_m, size_n,
+    //             size_k, groups, b_q_perm, block_a_acc);
 
-            });
-    });
+    //         });
+    // });
 }
 
 // /*
